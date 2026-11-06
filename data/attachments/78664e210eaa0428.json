@@ -1,0 +1,117 @@
+{
+  "id": 2,
+  "purpose": "synthetic-data: cliente MX",
+  "provider": "ollama",
+  "model": "llama3.1:8b",
+  "startedAt": "2026-11-06T14:46:24.242Z",
+  "durationMs": 27046,
+  "attempts": 1,
+  "ok": true,
+  "request": {
+    "url": "http://localhost:11434/api/chat",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "model": "llama3.1:8b",
+      "stream": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un generador de datos de prueba sintéticos para un e-commerce.\nGeneras perfiles de cliente FICTICIOS pero realistas y coherentes con el país pedido: nombres y apellidos típicos de ese país,\nuna ciudad real, una dirección con el formato local, un código postal que exista para esa ciudad y un teléfono con el indicativo internacional.\nNunca uses datos de personas reales ni valores de ejemplo como \"John Doe\", \"Test\" o \"12345\".\nResponde solo con JSON."
+        },
+        {
+          "role": "user",
+          "content": "País: México (código ISO \"MX\", indicativo +52).\nFormato del código postal: 5 dígitos.\nRango de edad del cliente: 51-65.\nEscenario de compra: regalo de cumpleaños con entrega sorpresa.\nNO repitas ninguno de estos nombres: Sofía García.\nVariación aleatoria: 9130e1c0-56d8-40d1-bf9e-0c9862a5db2b.\nDevuelve este JSON:\n{\"firstName\":\"...\",\"lastName\":\"...\",\"email\":\"...\",\"phone\":\"+52 ...\",\"country\":\"MX\",\"city\":\"...\",\"address\":\"...\",\"postalCode\":\"...\",\"deliveryInstructions\":\"instrucción de entrega concreta y coherente con el escenario\"}"
+        }
+      ],
+      "format": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 40,
+            "pattern": "^[\\p{L}][\\p{L}' .-]*$"
+          },
+          "lastName": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 40,
+            "pattern": "^[\\p{L}][\\p{L}' .-]*$"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string",
+            "const": "MX"
+          },
+          "city": {
+            "type": "string",
+            "minLength": 2
+          },
+          "address": {
+            "type": "string",
+            "minLength": 5
+          },
+          "postalCode": {
+            "type": "string",
+            "pattern": "^\\d{5}$"
+          },
+          "deliveryInstructions": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName",
+          "email",
+          "phone",
+          "country",
+          "city",
+          "address",
+          "postalCode",
+          "deliveryInstructions"
+        ]
+      },
+      "options": {
+        "temperature": 1,
+        "num_predict": 500,
+        "num_ctx": 8192
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "model": "llama3.1:8b",
+      "created_at": "2026-11-06T14:46:51.2873425Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"firstName\": \"Luisa\",\n  \"lastName\": \"Ruiz Hernández\",\n  \"email\": \"luisa.ruiz@gmail.com\",\n  \"phone\": \"+52 555 123 4567\",\n  \"country\": \"MX\",\n  \"city\": \"Guadalajara\",\n  \"address\": \"Av. Juárez 123, Col. Centro\",\n  \"postalCode\": \"45000\",\n  \"deliveryInstructions\": \"Pedirle a la persona que atienda la puerta que le diga a mi esposo que es un regalo de cumpleaños con entrega sorpresa\"\n}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 27042341100,
+      "load_duration": 7919900,
+      "prompt_eval_count": 291,
+      "prompt_eval_cached_count": 157,
+      "prompt_eval_duration": 3343198000,
+      "eval_count": 134,
+      "eval_duration": 23669902000
+    }
+  },
+  "text": "{\n  \"firstName\": \"Luisa\",\n  \"lastName\": \"Ruiz Hernández\",\n  \"email\": \"luisa.ruiz@gmail.com\",\n  \"phone\": \"+52 555 123 4567\",\n  \"country\": \"MX\",\n  \"city\": \"Guadalajara\",\n  \"address\": \"Av. Juárez 123, Col. Centro\",\n  \"postalCode\": \"45000\",\n  \"deliveryInstructions\": \"Pedirle a la persona que atienda la puerta que le diga a mi esposo que es un regalo de cumpleaños con entrega sorpresa\"\n}",
+  "usage": {
+    "inputTokens": 291,
+    "outputTokens": 134
+  }
+}

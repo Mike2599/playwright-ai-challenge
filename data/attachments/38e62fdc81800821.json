@@ -1,0 +1,117 @@
+{
+  "id": 1,
+  "purpose": "synthetic-data: cliente CO",
+  "provider": "ollama",
+  "model": "llama3.1:8b",
+  "startedAt": "2026-11-06T14:46:51.682Z",
+  "durationMs": 23193,
+  "attempts": 1,
+  "ok": true,
+  "request": {
+    "url": "http://localhost:11434/api/chat",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "model": "llama3.1:8b",
+      "stream": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un generador de datos de prueba sintéticos para un e-commerce.\nGeneras perfiles de cliente FICTICIOS pero realistas y coherentes con el país pedido: nombres y apellidos típicos de ese país,\nuna ciudad real, una dirección con el formato local, un código postal que exista para esa ciudad y un teléfono con el indicativo internacional.\nNunca uses datos de personas reales ni valores de ejemplo como \"John Doe\", \"Test\" o \"12345\".\nResponde solo con JSON."
+        },
+        {
+          "role": "user",
+          "content": "País: Colombia (código ISO \"CO\", indicativo +57).\nFormato del código postal: 6 dígitos (p. ej. código DANE postal de la ciudad).\nRango de edad del cliente: 18-25.\nEscenario de compra: cliente corporativo que recibe en horario de oficina.\nVariación aleatoria: 7a751ca9-4856-49c4-898a-529f43e1f2e5.\nDevuelve este JSON:\n{\"firstName\":\"...\",\"lastName\":\"...\",\"email\":\"...\",\"phone\":\"+57 ...\",\"country\":\"CO\",\"city\":\"...\",\"address\":\"...\",\"postalCode\":\"...\",\"deliveryInstructions\":\"instrucción de entrega concreta y coherente con el escenario\"}"
+        }
+      ],
+      "format": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 40,
+            "pattern": "^[\\p{L}][\\p{L}' .-]*$"
+          },
+          "lastName": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 40,
+            "pattern": "^[\\p{L}][\\p{L}' .-]*$"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string",
+            "const": "CO"
+          },
+          "city": {
+            "type": "string",
+            "minLength": 2
+          },
+          "address": {
+            "type": "string",
+            "minLength": 5
+          },
+          "postalCode": {
+            "type": "string",
+            "pattern": "^\\d{6}$"
+          },
+          "deliveryInstructions": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName",
+          "email",
+          "phone",
+          "country",
+          "city",
+          "address",
+          "postalCode",
+          "deliveryInstructions"
+        ]
+      },
+      "options": {
+        "temperature": 1,
+        "num_predict": 500,
+        "num_ctx": 8192
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "model": "llama3.1:8b",
+      "created_at": "2026-11-06T14:47:14.8744248Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"firstName\":\"Alejandro\",\"lastName\":\"Rodríguez\",\"email\":\"arodriguez@empresa.com\",\"phone\":\"+57 3124567890\",\"country\":\"CO\",\"city\":\"Bogotá\",\"address\":\"Calle 123 # 45-12, Barrio La Macarena\",\"postalCode\":\"111111\",\"deliveryInstructions\":\"Recibir en la recepción de la empresa en el horario de 10:00 a 18:00, asegurando que la persona encargada esté disponible para firmar la recepción del paquete.\"}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 23188050700,
+      "load_duration": 8742600,
+      "prompt_eval_count": 287,
+      "prompt_eval_cached_count": 169,
+      "prompt_eval_duration": 3286603000,
+      "eval_count": 118,
+      "eval_duration": 19845962000
+    }
+  },
+  "text": "{\"firstName\":\"Alejandro\",\"lastName\":\"Rodríguez\",\"email\":\"arodriguez@empresa.com\",\"phone\":\"+57 3124567890\",\"country\":\"CO\",\"city\":\"Bogotá\",\"address\":\"Calle 123 # 45-12, Barrio La Macarena\",\"postalCode\":\"111111\",\"deliveryInstructions\":\"Recibir en la recepción de la empresa en el horario de 10:00 a 18:00, asegurando que la persona encargada esté disponible para firmar la recepción del paquete.\"}",
+  "usage": {
+    "inputTokens": 287,
+    "outputTokens": 118
+  }
+}

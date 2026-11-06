@@ -1,0 +1,20 @@
+{
+  "request": {
+    "country": "MX",
+    "scenario": "regalo de cumpleaños con entrega sorpresa",
+    "exclude": [
+      "Sofía García"
+    ]
+  },
+  "profile": {
+    "firstName": "Luisa",
+    "lastName": "Ruiz Hernández",
+    "email": "luisa.ruiz@gmail.com",
+    "phone": "+52 555 123 4567",
+    "country": "MX",
+    "city": "Guadalajara",
+    "address": "Av. Juárez 123, Col. Centro",
+    "postalCode": "45000",
+    "deliveryInstructions": "Pedirle a la persona que atienda la puerta que le diga a mi esposo que es un regalo de cumpleaños con entrega sorpresa"
+  }
+}

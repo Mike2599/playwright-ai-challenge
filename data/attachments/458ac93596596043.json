@@ -1,0 +1,85 @@
+{
+  "id": 19,
+  "purpose": "semantic-assertion",
+  "provider": "ollama",
+  "model": "llama3.1:8b",
+  "startedAt": "2026-11-06T14:54:47.392Z",
+  "durationMs": 28420,
+  "attempts": 1,
+  "ok": true,
+  "request": {
+    "url": "http://localhost:11434/api/chat",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "model": "llama3.1:8b",
+      "stream": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un evaluador de calidad (QA) que verifica textos de una interfaz de usuario por su SIGNIFICADO.\nRecibes un TEXTO REAL tomado de la UI y una INTENCIÓN ESPERADA. Decide si el texto cumple esa intención:\n- Juzga el significado, no las palabras exactas. Paráfrasis, sinónimos u otro idioma son válidos.\n- Primero identifica TODO lo que comunica el texto (cada idea, no solo la última) y su tono.\n- Evalúa SOLO los aspectos que menciona la intención. Si la intención no habla del tono, el tono no cuenta;\n  si lo menciona (amable, positivo, formal...), el texto también debe tener ese tono.\n- Si el texto comunica algo distinto, contradictorio o incompleto respecto a lo que pide la intención, no la cumple.\n- La información adicional que no contradice la intención NO la incumple: si todo lo que pide la intención está\n  en el texto, \"matches\" es true, aunque el texto diga más cosas o tenga un tono que la intención no menciona.\n- Sé coherente: si tu razonamiento concluye que la intención se cumple, \"matches\" debe ser true.\n- \"confidence\" es tu seguridad en el veredicto (0 a 1), no el grado de parecido.\n\nResponde solo con este JSON:\n{\"detectedIntent\": \"todas las ideas que comunica el texto y su tono\", \"reasoning\": \"contrasta cada aspecto de la intención con el texto\", \"matches\": true|false, \"confidence\": 0.0-1.0}"
+        },
+        {
+          "role": "user",
+          "content": "TEXTO REAL:\n\"\"\"¡Gracias por tu compra!\nRecibimos tu pedido y ya lo estamos preparando para enviártelo lo antes posible.\"\"\"\n\nINTENCIÓN ESPERADA:\n\"\"\"Confirma que la compra se completó con éxito, agradece al cliente y le informa que su pedido va en camino, con un tono positivo\"\"\""
+        }
+      ],
+      "format": {
+        "type": "object",
+        "properties": {
+          "detectedIntent": {
+            "type": "string"
+          },
+          "reasoning": {
+            "type": "string"
+          },
+          "matches": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "detectedIntent",
+          "reasoning",
+          "matches",
+          "confidence"
+        ]
+      },
+      "options": {
+        "temperature": 0,
+        "num_predict": 400,
+        "num_ctx": 8192
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "model": "llama3.1:8b",
+      "created_at": "2026-11-06T14:55:15.8107601Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"detectedIntent\": \"La compra se completó con éxito, se agradece al cliente, se informa que el pedido está en camino, tono positivo\", \"reasoning\": \"El texto confirma que la compra se completó con éxito (\\\"Recibimos tu pedido\\\"). Agradece al cliente (\\\"¡Gracias por tu compra!\\\"). Informa que el pedido está en camino (\\\"ya lo estamos preparando para enviártelo lo antes posible\\\"). El tono es positivo, ya que utiliza un lenguaje amable y agradecido. Por lo tanto, el texto cumple con la intención esperada.\", \"matches\": true, \"confidence\": 1.0}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 28417790900,
+      "load_duration": 7449000,
+      "prompt_eval_count": 470,
+      "prompt_eval_cached_count": 395,
+      "prompt_eval_duration": 1869839000,
+      "eval_count": 153,
+      "eval_duration": 26480501000
+    }
+  },
+  "text": "{\"detectedIntent\": \"La compra se completó con éxito, se agradece al cliente, se informa que el pedido está en camino, tono positivo\", \"reasoning\": \"El texto confirma que la compra se completó con éxito (\\\"Recibimos tu pedido\\\"). Agradece al cliente (\\\"¡Gracias por tu compra!\\\"). Informa que el pedido está en camino (\\\"ya lo estamos preparando para enviártelo lo antes posible\\\"). El tono es positivo, ya que utiliza un lenguaje amable y agradecido. Por lo tanto, el texto cumple con la intención esperada.\", \"matches\": true, \"confidence\": 1.0}",
+  "usage": {
+    "inputTokens": 470,
+    "outputTokens": 153
+  }
+}

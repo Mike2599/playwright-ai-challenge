@@ -1,0 +1,17 @@
+{
+  "request": {
+    "scenario": "cliente corporativo que recibe en horario de oficina",
+    "country": "CO"
+  },
+  "profile": {
+    "firstName": "Alejandro",
+    "lastName": "Rodríguez",
+    "email": "arodriguez@empresa.com",
+    "phone": "+57 3124567890",
+    "country": "CO",
+    "city": "Bogotá",
+    "address": "Calle 123 # 45-12, Barrio La Macarena",
+    "postalCode": "111111",
+    "deliveryInstructions": "Recibir en la recepción de la empresa en el horario de 10:00 a 18:00, asegurando que la persona encargada esté disponible para firmar la recepción del paquete."
+  }
+}

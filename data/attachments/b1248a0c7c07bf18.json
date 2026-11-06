@@ -1,0 +1,16 @@
+{
+  "request": {
+    "country": "CO"
+  },
+  "profile": {
+    "firstName": "Ana María",
+    "lastName": "Gómez Giraldo",
+    "email": "agomezgiraldo@colombia.com",
+    "phone": "+57 310 123 4567",
+    "country": "CO",
+    "city": "Bogotá",
+    "address": "Calle 123 # 45-12, Zona 6",
+    "postalCode": "110331",
+    "deliveryInstructions": "En la puerta principal, si no está en casa, puede dejar en la cafetería 'El Patio' de la esquina"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "id": 15,
+  "purpose": "self-healing: total a pagar de la orden (Total)",
+  "provider": "ollama",
+  "model": "llama3.1:8b",
+  "startedAt": "2026-11-06T14:52:58.643Z",
+  "durationMs": 32856,
+  "attempts": 1,
+  "ok": true,
+  "request": {
+    "url": "http://localhost:11434/api/chat",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "model": "llama3.1:8b",
+      "stream": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un experto en automatización web con Playwright especializado en reparar localizadores rotos.\nRecibes la descripción de un elemento, el localizador que dejó de funcionar y el estado ACTUAL del contenedor\n(árbol de accesibilidad y HTML compacto: una etiqueta por línea, la indentación indica el anidamiento).\n\nDevuelve hasta 3 candidatos ordenados del más al menos probable, con este formato JSON exacto:\n{\"candidates\":[{\"selector\":\"...\",\"type\":\"css\",\"reason\":\"...\"}]}\n\nReglas:\n- \"type\" es \"css\" (CSS estándar) o \"xpath\" (XPath 1.0). No uses pseudo-selectores propios de Playwright (:has-text, text=, >>).\n- Usa SOLO atributos y textos que aparecen en el HTML recibido; nunca inventes atributos.\n- Cada selector debe identificar exactamente UN elemento visible, salvo que se indique que se esperan VARIOS:\n  en ese caso debe seleccionar todos los elementos de ese tipo y ninguno más.\n- Prefiere, en este orden: atributos de prueba (data-*), id, name, placeholder, aria-label, y por último el texto visible (XPath).\n- Copia los valores de los atributos completos, incluidos los sufijos aleatorios que tengan."
+        },
+        {
+          "role": "user",
+          "content": "Elemento buscado: total a pagar de la orden (Total)\nTexto visible esperado en el elemento: \"Total\"\nLocalizador que dejó de funcionar (TimeoutError): [data-test=\"total-label\"]\nContenedor analizado: .summary_info\nÁrbol de accesibilidad del contenedor:\n- text: \"Payment Information: SauceCard #31337 Shipping Information: Free Pony Express Delivery! Price Total Item total: $39.98 Tax: $3.20 Total: $43.18\"\n- button \"Cancel\"\n- button \"Finish\"\nHTML actual del contenedor:\n<div class=\"summary_info\">\n  <div class=\"summary_info_label\" data-qa=\"payment-info-label-5mb36\">Payment Information:\n  <div class=\"summary_value_label\" data-qa=\"payment-info-value-5mb36\">SauceCard #31337\n  <div class=\"summary_info_label\" data-qa=\"shipping-info-label-5mb36\">Shipping Information:\n  <div class=\"summary_value_label\" data-qa=\"shipping-info-value-5mb36\">Free Pony Express Delivery!\n  <div class=\"summary_info_label\" data-qa=\"total-info-label-5mb36\">Price Total\n  <div class=\"summary_subtotal_label\" data-qa=\"subtotal-label-5mb36\">Item total: $ 39.98\n  <div class=\"summary_tax_label\" data-qa=\"tax-label-5mb36\">Tax: $ 3.20\n  <div class=\"summary_total_label\" data-qa=\"total-label-5mb36\">Total: $ 43.18\n  <div class=\"cart_footer\">\n    <button class=\"btn btn_secondary back btn_medium cart_cancel_link\" id=\"cancel_5mb36\" name=\"cancel\" data-qa=\"cancel-5mb36\">Cancel\n      <img class=\"back-image\" alt=\"\">\n    <button class=\"btn btn_action btn_medium cart_button\" id=\"finish_5mb36\" name=\"finish\" data-qa=\"finish-5mb36\">Finish"
+        }
+      ],
+      "format": {
+        "type": "object",
+        "properties": {
+          "candidates": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "selector": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "type": {
+                  "default": "css",
+                  "type": "string",
+                  "enum": [
+                    "css",
+                    "xpath"
+                  ]
+                },
+                "reason": {
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "selector"
+              ]
+            }
+          }
+        },
+        "required": [
+          "candidates"
+        ]
+      },
+      "options": {
+        "temperature": 0,
+        "num_predict": 1024,
+        "num_ctx": 8192
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "model": "llama3.1:8b",
+      "created_at": "2026-11-06T14:53:31.4984967Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"candidates\":[{\"selector\":\"div[data-qa=\\\"total-label-5mb36\\\"]\",\"type\":\"css\",\"reason\":\"Atributo data-qa=\\\"total-label-5mb36\\\" del elemento div\"}, {\"selector\":\"div[data-qa=\\\"total-info-label-5mb36\\\"]\",\"type\":\"css\",\"reason\":\"Atributo data-qa=\\\"total-info-label-5mb36\\\" del elemento div\"}, {\"selector\":\"//div[contains(text(), 'Total') and contains(@class, 'summary_total_label')]/..\",\"type\":\"xpath\",\"reason\":\"Texto 'Total' y clase 'summary_total_label' del elemento div\"}]}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 32853591600,
+      "load_duration": 6352900,
+      "prompt_eval_count": 740,
+      "prompt_eval_cached_count": 308,
+      "prompt_eval_duration": 10296853000,
+      "eval_count": 131,
+      "eval_duration": 22513308000
+    }
+  },
+  "text": "{\"candidates\":[{\"selector\":\"div[data-qa=\\\"total-label-5mb36\\\"]\",\"type\":\"css\",\"reason\":\"Atributo data-qa=\\\"total-label-5mb36\\\" del elemento div\"}, {\"selector\":\"div[data-qa=\\\"total-info-label-5mb36\\\"]\",\"type\":\"css\",\"reason\":\"Atributo data-qa=\\\"total-info-label-5mb36\\\" del elemento div\"}, {\"selector\":\"//div[contains(text(), 'Total') and contains(@class, 'summary_total_label')]/..\",\"type\":\"xpath\",\"reason\":\"Texto 'Total' y clase 'summary_total_label' del elemento div\"}]}",
+  "usage": {
+    "inputTokens": 740,
+    "outputTokens": 131
+  }
+}

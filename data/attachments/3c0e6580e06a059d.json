@@ -1,0 +1,117 @@
+{
+  "id": 1,
+  "purpose": "synthetic-data: cliente CA",
+  "provider": "ollama",
+  "model": "llama3.1:8b",
+  "startedAt": "2026-11-06T14:47:35.930Z",
+  "durationMs": 20032,
+  "attempts": 1,
+  "ok": true,
+  "request": {
+    "url": "http://localhost:11434/api/chat",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "model": "llama3.1:8b",
+      "stream": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un generador de datos de prueba sintéticos para un e-commerce.\nGeneras perfiles de cliente FICTICIOS pero realistas y coherentes con el país pedido: nombres y apellidos típicos de ese país,\nuna ciudad real, una dirección con el formato local, un código postal que exista para esa ciudad y un teléfono con el indicativo internacional.\nNunca uses datos de personas reales ni valores de ejemplo como \"John Doe\", \"Test\" o \"12345\".\nResponde solo con JSON."
+        },
+        {
+          "role": "user",
+          "content": "País: Canadá (código ISO \"CA\", indicativo +1).\nFormato del código postal: A1A 1A1 (letra, dígito, letra, espacio, dígito, letra, dígito).\nRango de edad del cliente: 51-65.\nEscenario de compra: compra personal con entrega a domicilio.\nVariación aleatoria: 72a0383a-dac6-4781-b361-c2ea92070d7b.\nDevuelve este JSON:\n{\"firstName\":\"...\",\"lastName\":\"...\",\"email\":\"...\",\"phone\":\"+1 ...\",\"country\":\"CA\",\"city\":\"...\",\"address\":\"...\",\"postalCode\":\"...\",\"deliveryInstructions\":\"instrucción de entrega concreta y coherente con el escenario\"}"
+        }
+      ],
+      "format": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 40,
+            "pattern": "^[\\p{L}][\\p{L}' .-]*$"
+          },
+          "lastName": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 40,
+            "pattern": "^[\\p{L}][\\p{L}' .-]*$"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string",
+            "const": "CA"
+          },
+          "city": {
+            "type": "string",
+            "minLength": 2
+          },
+          "address": {
+            "type": "string",
+            "minLength": 5
+          },
+          "postalCode": {
+            "type": "string",
+            "pattern": "^[A-Z]\\d[A-Z] \\d[A-Z]\\d$"
+          },
+          "deliveryInstructions": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName",
+          "email",
+          "phone",
+          "country",
+          "city",
+          "address",
+          "postalCode",
+          "deliveryInstructions"
+        ]
+      },
+      "options": {
+        "temperature": 1,
+        "num_predict": 500,
+        "num_ctx": 8192
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "model": "llama3.1:8b",
+      "created_at": "2026-11-06T14:47:55.9610271Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"firstName\":\"Éric Carrier\",\"lastName\":\"Lefebvre\",\"email\":\"eric.lefebvre@bell.ca\",\"phone\":\"+1 438 433 7189\",\"country\":\"CA\",\"city\":\"Montreal\",\"address\":\"1349, rue Sherbrooke Ouest\",\"postalCode\":\"H3G 1C2\",\"deliveryInstructions\":\"dejar el paquete en la puerta delantero sin llamar a la puerta\"}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 20029938200,
+      "load_duration": 7644500,
+      "prompt_eval_count": 291,
+      "prompt_eval_cached_count": 124,
+      "prompt_eval_duration": 3927176000,
+      "eval_count": 91,
+      "eval_duration": 16075170000
+    }
+  },
+  "text": "{\"firstName\":\"Éric Carrier\",\"lastName\":\"Lefebvre\",\"email\":\"eric.lefebvre@bell.ca\",\"phone\":\"+1 438 433 7189\",\"country\":\"CA\",\"city\":\"Montreal\",\"address\":\"1349, rue Sherbrooke Ouest\",\"postalCode\":\"H3G 1C2\",\"deliveryInstructions\":\"dejar el paquete en la puerta delantero sin llamar a la puerta\"}",
+  "usage": {
+    "inputTokens": 291,
+    "outputTokens": 91
+  }
+}

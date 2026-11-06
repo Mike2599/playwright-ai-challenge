@@ -1,0 +1,11 @@
+{
+  "detectedIntent": "La mochila tiene diseño elegante, protege el portátil y la tableta, y tiene compartimentos acolchados.",
+  "reasoning": "El texto describe una mochila con estilo que protege el portátil y la tableta, lo que coincide con la intención. Los compartimentos acolchados son una característica adicional que no contradice la intención.",
+  "matches": true,
+  "confidence": 1,
+  "actualText": "Mochila de diseño elegante con compartimentos acolchados que protegen tu portátil y tu tableta.",
+  "expectedIntent": "Describe una mochila con estilo que protege el portátil (laptop) y la tableta",
+  "negated": false,
+  "threshold": 0.7,
+  "passed": true
+}

@@ -1,0 +1,96 @@
+{
+  "id": 17,
+  "purpose": "self-healing: título del mensaje de confirmación de la compra",
+  "provider": "ollama",
+  "model": "llama3.1:8b",
+  "startedAt": "2026-11-06T14:53:55.777Z",
+  "durationMs": 23714,
+  "attempts": 1,
+  "ok": true,
+  "request": {
+    "url": "http://localhost:11434/api/chat",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "model": "llama3.1:8b",
+      "stream": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un experto en automatización web con Playwright especializado en reparar localizadores rotos.\nRecibes la descripción de un elemento, el localizador que dejó de funcionar y el estado ACTUAL del contenedor\n(árbol de accesibilidad y HTML compacto: una etiqueta por línea, la indentación indica el anidamiento).\n\nDevuelve hasta 3 candidatos ordenados del más al menos probable, con este formato JSON exacto:\n{\"candidates\":[{\"selector\":\"...\",\"type\":\"css\",\"reason\":\"...\"}]}\n\nReglas:\n- \"type\" es \"css\" (CSS estándar) o \"xpath\" (XPath 1.0). No uses pseudo-selectores propios de Playwright (:has-text, text=, >>).\n- Usa SOLO atributos y textos que aparecen en el HTML recibido; nunca inventes atributos.\n- Cada selector debe identificar exactamente UN elemento visible, salvo que se indique que se esperan VARIOS:\n  en ese caso debe seleccionar todos los elementos de ese tipo y ninguno más.\n- Prefiere, en este orden: atributos de prueba (data-*), id, name, placeholder, aria-label, y por último el texto visible (XPath).\n- Copia los valores de los atributos completos, incluidos los sufijos aleatorios que tengan."
+        },
+        {
+          "role": "user",
+          "content": "Elemento buscado: título del mensaje de confirmación de la compra\nLocalizador que dejó de funcionar (TimeoutError): [data-test=\"complete-header\"]\nContenedor analizado: .checkout_complete_container\nÁrbol de accesibilidad del contenedor:\n- main:\n  - img \"Pony Express\"\n  - heading \"¡Gracias por tu compra!\" [level=2]\n  - text: Recibimos tu pedido y ya lo estamos preparando para enviártelo lo antes posible.\n  - button \"Back Home\"\n  - button \"Generate PDF order\"\nHTML actual del contenedor:\n<div id=\"checkout_complete_container_5mb36\" class=\"checkout_complete_container\" role=\"main\" data-qa=\"checkout-complete-container-5mb36\">\n  <img alt=\"Pony Express\" class=\"pony_express\" data-qa=\"pony-express-5mb36\">\n  <h2 class=\"complete-header\" data-qa=\"complete-header-5mb36\">¡Gracias por tu compra!\n  <div class=\"complete-text\" data-qa=\"complete-text-5mb36\">Recibimos tu pedido y ya lo estamos preparando para enviártelo lo antes posible.\n  <div class=\"complete-buttons\">\n    <button class=\"btn btn_primary btn_small\" id=\"back-to-products_5mb36\" name=\"back-to-products\" data-qa=\"back-to-products-5mb36\">Back Home\n    <button class=\"btn btn_primary btn_small generate-pdf-button\" id=\"generate-pdf-order_5mb36\" name=\"generate-pdf-order\" data-qa=\"generate-pdf-order-5mb36\">Generate PDF order"
+        }
+      ],
+      "format": {
+        "type": "object",
+        "properties": {
+          "candidates": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "selector": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "type": {
+                  "default": "css",
+                  "type": "string",
+                  "enum": [
+                    "css",
+                    "xpath"
+                  ]
+                },
+                "reason": {
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "selector"
+              ]
+            }
+          }
+        },
+        "required": [
+          "candidates"
+        ]
+      },
+      "options": {
+        "temperature": 0,
+        "num_predict": 1024,
+        "num_ctx": 8192
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "model": "llama3.1:8b",
+      "created_at": "2026-11-06T14:54:19.4910108Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"candidates\":[{\"selector\":\"h2.complete-header\",\"type\":\"css\",\"reason\":\"atributo data-qa=\\\"complete-header-5mb36\\\"\"}, {\"selector\":\"//h2[.='¡Gracias por tu compra!']\",\"type\":\"xpath\",\"reason\":\"texto visible\"}, {\"selector\":\"//h2[@class='complete-header']\",\"type\":\"xpath\",\"reason\":\"atributo class='complete-header'\"}]}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 23712035000,
+      "load_duration": 10063300,
+      "prompt_eval_count": 657,
+      "prompt_eval_cached_count": 308,
+      "prompt_eval_duration": 9303949000,
+      "eval_count": 85,
+      "eval_duration": 14377323000
+    }
+  },
+  "text": "{\"candidates\":[{\"selector\":\"h2.complete-header\",\"type\":\"css\",\"reason\":\"atributo data-qa=\\\"complete-header-5mb36\\\"\"}, {\"selector\":\"//h2[.='¡Gracias por tu compra!']\",\"type\":\"xpath\",\"reason\":\"texto visible\"}, {\"selector\":\"//h2[@class='complete-header']\",\"type\":\"xpath\",\"reason\":\"atributo class='complete-header'\"}]}",
+  "usage": {
+    "inputTokens": 657,
+    "outputTokens": 85
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "id": 4,
+  "purpose": "self-healing: nombres de los productos que hay en el carrito",
+  "provider": "ollama",
+  "model": "llama3.1:8b",
+  "startedAt": "2026-11-06T14:37:47.811Z",
+  "durationMs": 40039,
+  "attempts": 1,
+  "ok": true,
+  "request": {
+    "url": "http://localhost:11434/api/chat",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "model": "llama3.1:8b",
+      "stream": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un experto en automatización web con Playwright especializado en reparar localizadores rotos.\nRecibes la descripción de un elemento, el localizador que dejó de funcionar y el estado ACTUAL del contenedor\n(árbol de accesibilidad y HTML compacto: una etiqueta por línea, la indentación indica el anidamiento).\n\nDevuelve hasta 3 candidatos ordenados del más al menos probable, con este formato JSON exacto:\n{\"candidates\":[{\"selector\":\"...\",\"type\":\"css\",\"reason\":\"...\"}]}\n\nReglas:\n- \"type\" es \"css\" (CSS estándar) o \"xpath\" (XPath 1.0). No uses pseudo-selectores propios de Playwright (:has-text, text=, >>).\n- Usa SOLO atributos y textos que aparecen en el HTML recibido; nunca inventes atributos.\n- Cada selector debe identificar exactamente UN elemento visible, salvo que se indique que se esperan VARIOS:\n  en ese caso debe seleccionar todos los elementos de ese tipo y ninguno más.\n- Prefiere, en este orden: atributos de prueba (data-*), id, name, placeholder, aria-label, y por último el texto visible (XPath).\n- Copia los valores de los atributos completos, incluidos los sufijos aleatorios que tengan."
+        },
+        {
+          "role": "user",
+          "content": "Elemento buscado: nombres de los productos que hay en el carrito\nSe esperan VARIOS elementos de este tipo: el selector debe seleccionarlos todos.\nLocalizador que dejó de funcionar (TimeoutError): [data-test=\"inventory-item-name\"]\nContenedor analizado: .cart_list\nÁrbol de accesibilidad del contenedor:\n- text: QTY Description 1\n- button \"View details for Sauce Labs Fleece Jacket\": Sauce Labs Fleece Jacket\n- text: It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office. $49.99\n- button \"Remove\"\nHTML actual del contenedor:\n<div class=\"cart_list\" data-qa=\"cart-list-n3nb8\">\n  <div class=\"cart_quantity_label\" data-qa=\"cart-quantity-label-n3nb8\">QTY\n  <div class=\"cart_desc_label\" data-qa=\"cart-desc-label-n3nb8\">Description\n  <div class=\"cart_item\" data-qa=\"inventory-item-n3nb8\">\n    <div class=\"cart_quantity\" data-qa=\"item-quantity-n3nb8\">1\n    <div class=\"cart_item_label\">\n      <a href=\"#\" id=\"item_5_title_link_n3nb8\" role=\"button\" aria-label=\"View details for Sauce Labs Fleece Jacket\" data-qa=\"item-5-title-link-n3nb8\">\n        <div class=\"inventory_item_name\" data-qa=\"inventory-item-name-n3nb8\">Sauce Labs Fleece Jacket\n      <div class=\"inventory_item_desc\" data-qa=\"inventory-item-desc-n3nb8\">It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling ev\n      <div class=\"item_pricebar\">\n        <div class=\"inventory_item_price\" data-qa=\"inventory-item-price-n3nb8\">$ 49.99\n        <button class=\"btn btn_secondary btn_small cart_button\" id=\"remove-sauce-labs-fleece-jacket_n3nb8\" name=\"remove-sauce-labs-fleece-jacket\" data-qa=\"remove-sauce-labs-fleece-jacket-n3nb8\">Remove"
+        }
+      ],
+      "format": {
+        "type": "object",
+        "properties": {
+          "candidates": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "selector": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "type": {
+                  "default": "css",
+                  "type": "string",
+                  "enum": [
+                    "css",
+                    "xpath"
+                  ]
+                },
+                "reason": {
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "selector"
+              ]
+            }
+          }
+        },
+        "required": [
+          "candidates"
+        ]
+      },
+      "options": {
+        "temperature": 0,
+        "num_predict": 1024,
+        "num_ctx": 8192
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "model": "llama3.1:8b",
+      "created_at": "2026-11-06T14:38:27.8484661Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"candidates\":[{\"selector\":\".cart_item_label a\",\"type\":\"css\",\"reason\":\"El selector selecciona todos los elementos de tipo 'cart_item_label a' que contienen el texto 'Sauce Labs Fleece Jacket'.\"},{\"selector\":\".inventory_item_name\",\"type\":\"css\",\"reason\":\"El selector selecciona todos los elementos de tipo 'inventory_item_name' que contienen el texto 'Sauce Labs Fleece Jacket'.\"},{\"selector\":\"//div[@data-qa='inventory-item-name-n3nb8']\",\"type\":\"xpath\",\"reason\":\"El selector selecciona todos los elementos con el atributo 'data-qa' igual a 'inventory-item-name-n3nb8'.\"}]}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 40035603000,
+      "load_duration": 7966000,
+      "prompt_eval_count": 797,
+      "prompt_eval_cached_count": 308,
+      "prompt_eval_duration": 13327379000,
+      "eval_count": 146,
+      "eval_duration": 26693593000
+    }
+  },
+  "text": "{\"candidates\":[{\"selector\":\".cart_item_label a\",\"type\":\"css\",\"reason\":\"El selector selecciona todos los elementos de tipo 'cart_item_label a' que contienen el texto 'Sauce Labs Fleece Jacket'.\"},{\"selector\":\".inventory_item_name\",\"type\":\"css\",\"reason\":\"El selector selecciona todos los elementos de tipo 'inventory_item_name' que contienen el texto 'Sauce Labs Fleece Jacket'.\"},{\"selector\":\"//div[@data-qa='inventory-item-name-n3nb8']\",\"type\":\"xpath\",\"reason\":\"El selector selecciona todos los elementos con el atributo 'data-qa' igual a 'inventory-item-name-n3nb8'.\"}]}",
+  "usage": {
+    "inputTokens": 797,
+    "outputTokens": 146
+  }
+}

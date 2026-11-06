@@ -1,0 +1,16 @@
+{
+  "request": {
+    "country": "US"
+  },
+  "profile": {
+    "firstName": "Morgan",
+    "lastName": "Fletcher",
+    "email": "morganfletcher@gmail.com",
+    "phone": "+13524671234",
+    "country": "US",
+    "city": "Austin",
+    "address": "1234 W 5th St",
+    "postalCode": "78701-1234",
+    "deliveryInstructions": "Instrucción de entrega: deja el paquete en la puerta lateral con la cerradura en la parte inferior derecha de la puerta."
+  }
+}

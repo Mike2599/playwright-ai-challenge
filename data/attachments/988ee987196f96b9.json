@@ -1,0 +1,96 @@
+{
+  "id": 9,
+  "purpose": "self-healing: campo de texto Last Name (apellido)",
+  "provider": "ollama",
+  "model": "llama3.1:8b",
+  "startedAt": "2026-11-06T14:50:33.216Z",
+  "durationMs": 25397,
+  "attempts": 1,
+  "ok": true,
+  "request": {
+    "url": "http://localhost:11434/api/chat",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "model": "llama3.1:8b",
+      "stream": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un experto en automatización web con Playwright especializado en reparar localizadores rotos.\nRecibes la descripción de un elemento, el localizador que dejó de funcionar y el estado ACTUAL del contenedor\n(árbol de accesibilidad y HTML compacto: una etiqueta por línea, la indentación indica el anidamiento).\n\nDevuelve hasta 3 candidatos ordenados del más al menos probable, con este formato JSON exacto:\n{\"candidates\":[{\"selector\":\"...\",\"type\":\"css\",\"reason\":\"...\"}]}\n\nReglas:\n- \"type\" es \"css\" (CSS estándar) o \"xpath\" (XPath 1.0). No uses pseudo-selectores propios de Playwright (:has-text, text=, >>).\n- Usa SOLO atributos y textos que aparecen en el HTML recibido; nunca inventes atributos.\n- Cada selector debe identificar exactamente UN elemento visible, salvo que se indique que se esperan VARIOS:\n  en ese caso debe seleccionar todos los elementos de ese tipo y ninguno más.\n- Prefiere, en este orden: atributos de prueba (data-*), id, name, placeholder, aria-label, y por último el texto visible (XPath).\n- Copia los valores de los atributos completos, incluidos los sufijos aleatorios que tengan."
+        },
+        {
+          "role": "user",
+          "content": "Elemento buscado: campo de texto Last Name (apellido)\nTexto visible esperado en el elemento: \"Last Name\"\nLocalizador que dejó de funcionar (TimeoutError): [data-test=\"lastName\"]\nContenedor analizado: .checkout_info\nÁrbol de accesibilidad del contenedor:\n- textbox \"First Name\": Éric Carrier\n- textbox \"Last Name\"\n- textbox \"Zip/Postal Code\"\nHTML actual del contenedor:\n<div class=\"checkout_info\">\n  <div class=\"form_group\">\n    <input class=\"input_error form_input\" placeholder=\"First Name\" aria-label=\"First Name\" id=\"first-name_5mb36\" type=\"text\" value=\"Éric Carrier\" name=\"firstName\" data-qa=\"firstName-5mb36\">\n  <div class=\"form_group\">\n    <input class=\"input_error form_input\" placeholder=\"Last Name\" aria-label=\"Last Name\" id=\"last-name_5mb36\" type=\"text\" value=\"\" name=\"lastName\" data-qa=\"lastName-5mb36\">\n  <div class=\"form_group\">\n    <input class=\"input_error form_input\" placeholder=\"Zip/Postal Code\" aria-label=\"Zip/Postal Code\" id=\"postal-code_5mb36\" type=\"text\" value=\"\" name=\"postalCode\" data-qa=\"postalCode-5mb36\">\n  <div class=\"error-message-container\">"
+        }
+      ],
+      "format": {
+        "type": "object",
+        "properties": {
+          "candidates": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "selector": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "type": {
+                  "default": "css",
+                  "type": "string",
+                  "enum": [
+                    "css",
+                    "xpath"
+                  ]
+                },
+                "reason": {
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "selector"
+              ]
+            }
+          }
+        },
+        "required": [
+          "candidates"
+        ]
+      },
+      "options": {
+        "temperature": 0,
+        "num_predict": 1024,
+        "num_ctx": 8192
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "model": "llama3.1:8b",
+      "created_at": "2026-11-06T14:50:58.6128933Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"candidates\":[{\"selector\":\"input[name=\\\"lastName\\\"]\",\"type\":\"css\",\"reason\":\"El campo de texto tiene el atributo name igual a \\\"lastName\\\"\"}, {\"selector\":\"input[aria-label=\\\"Last Name\\\"]\",\"type\":\"css\",\"reason\":\"El campo de texto tiene el atributo aria-label igual a \\\"Last Name\\\"\"}, {\"selector\":\"//input[.=\\\"Last Name\\\"]\",\"type\":\"xpath\",\"reason\":\"El campo de texto tiene el texto visible igual a \\\"Last Name\\\"\"}]}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 25394955000,
+      "load_duration": 5765600,
+      "prompt_eval_count": 599,
+      "prompt_eval_cached_count": 311,
+      "prompt_eval_duration": 7599654000,
+      "eval_count": 102,
+      "eval_duration": 17782242000
+    }
+  },
+  "text": "{\"candidates\":[{\"selector\":\"input[name=\\\"lastName\\\"]\",\"type\":\"css\",\"reason\":\"El campo de texto tiene el atributo name igual a \\\"lastName\\\"\"}, {\"selector\":\"input[aria-label=\\\"Last Name\\\"]\",\"type\":\"css\",\"reason\":\"El campo de texto tiene el atributo aria-label igual a \\\"Last Name\\\"\"}, {\"selector\":\"//input[.=\\\"Last Name\\\"]\",\"type\":\"xpath\",\"reason\":\"El campo de texto tiene el texto visible igual a \\\"Last Name\\\"\"}]}",
+  "usage": {
+    "inputTokens": 599,
+    "outputTokens": 102
+  }
+}

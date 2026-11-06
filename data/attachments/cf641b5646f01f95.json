@@ -1,0 +1,20 @@
+{
+  "target": "botón Checkout del carrito",
+  "brokenSelector": "[data-test=\"checkout\"]",
+  "healedSelector": "#checkout_5mb36",
+  "selectorType": "css",
+  "reason": "id del botón de Checkout",
+  "scope": ".cart_footer",
+  "aiRounds": 1,
+  "candidates": [
+    {
+      "selector": "#checkout_5mb36",
+      "type": "css",
+      "reason": "id del botón de Checkout",
+      "verdict": "aceptado"
+    }
+  ],
+  "durationMs": 16956,
+  "model": "ollama/llama3.1:8b",
+  "timestamp": "2026-11-06T14:50:16.110Z"
+}

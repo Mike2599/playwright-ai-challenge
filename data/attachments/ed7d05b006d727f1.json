@@ -1,0 +1,12 @@
+[
+  {
+    "url": "https://www.saucedemo.com/assets/index-DnLqFcJI.js",
+    "action": "delayed",
+    "status": 200,
+    "details": [
+      "respuesta original HTTP 200 (550450 bytes)",
+      "latencia inyectada: 2491 ms"
+    ],
+    "timestamp": "2026-11-06T14:55:42.783Z"
+  }
+]

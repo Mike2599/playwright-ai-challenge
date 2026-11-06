@@ -1,0 +1,20 @@
+{
+  "target": "botón Finish para confirmar la compra",
+  "brokenSelector": "[data-test=\"finish\"]",
+  "healedSelector": "#finish_5mb36",
+  "selectorType": "css",
+  "reason": "id del botón Finish",
+  "scope": ".cart_footer",
+  "aiRounds": 1,
+  "candidates": [
+    {
+      "selector": "#finish_5mb36",
+      "type": "css",
+      "reason": "id del botón Finish",
+      "verdict": "aceptado"
+    }
+  ],
+  "durationMs": 18144,
+  "model": "ollama/llama3.1:8b",
+  "timestamp": "2026-11-06T14:53:52.687Z"
+}

@@ -1,0 +1,96 @@
+{
+  "id": 12,
+  "purpose": "self-healing: precios de los productos del resumen de la orden",
+  "provider": "ollama",
+  "model": "llama3.1:8b",
+  "startedAt": "2026-11-06T14:51:30.686Z",
+  "durationMs": 34449,
+  "attempts": 1,
+  "ok": true,
+  "request": {
+    "url": "http://localhost:11434/api/chat",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "model": "llama3.1:8b",
+      "stream": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un experto en automatización web con Playwright especializado en reparar localizadores rotos.\nRecibes la descripción de un elemento, el localizador que dejó de funcionar y el estado ACTUAL del contenedor\n(árbol de accesibilidad y HTML compacto: una etiqueta por línea, la indentación indica el anidamiento).\n\nDevuelve hasta 3 candidatos ordenados del más al menos probable, con este formato JSON exacto:\n{\"candidates\":[{\"selector\":\"...\",\"type\":\"css\",\"reason\":\"...\"}]}\n\nReglas:\n- \"type\" es \"css\" (CSS estándar) o \"xpath\" (XPath 1.0). No uses pseudo-selectores propios de Playwright (:has-text, text=, >>).\n- Usa SOLO atributos y textos que aparecen en el HTML recibido; nunca inventes atributos.\n- Cada selector debe identificar exactamente UN elemento visible, salvo que se indique que se esperan VARIOS:\n  en ese caso debe seleccionar todos los elementos de ese tipo y ninguno más.\n- Prefiere, en este orden: atributos de prueba (data-*), id, name, placeholder, aria-label, y por último el texto visible (XPath).\n- Copia los valores de los atributos completos, incluidos los sufijos aleatorios que tengan."
+        },
+        {
+          "role": "user",
+          "content": "Elemento buscado: precios de los productos del resumen de la orden\nSe esperan VARIOS elementos de este tipo: el selector debe seleccionarlos todos.\nLocalizador que dejó de funcionar (TimeoutError): [data-test=\"inventory-item-price\"]\nContenedor analizado: .cart_list\nÁrbol de accesibilidad del contenedor:\n- text: QTY Description 1\n- button \"View details for Sauce Labs Backpack\": Sauce Labs Backpack\n- text: carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 1\n- button \"View details for Sauce Labs Bike Light\": Sauce Labs Bike Light\n- text: A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99\nHTML actual del contenedor:\n<div class=\"cart_list\" data-qa=\"cart-list-5mb36\">\n  <div class=\"cart_quantity_label\" data-qa=\"cart-quantity-label-5mb36\">QTY\n  <div class=\"cart_desc_label\" data-qa=\"cart-desc-label-5mb36\">Description\n  <div class=\"cart_item\" data-qa=\"inventory-item-5mb36\">\n    <div class=\"cart_quantity\" data-qa=\"item-quantity-5mb36\">1\n    <div class=\"cart_item_label\">\n      <a href=\"#\" id=\"item_4_title_link_5mb36\" role=\"button\" aria-label=\"View details for Sauce Labs Backpack\" data-qa=\"item-4-title-link-5mb36\">\n        <div class=\"inventory_item_name\" data-qa=\"inventory-item-name-5mb36\">Sauce Labs Backpack\n      <div class=\"inventory_item_desc\" data-qa=\"inventory-item-desc-5mb36\">carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequ\n      <div class=\"item_pricebar\">\n        <div class=\"inventory_item_price\" data-qa=\"inventory-item-price-5mb36\">$ 29.99\n  <div class=\"cart_item\" data-qa=\"inventory-item-5mb36\">\n    <div class=\"cart_quantity\" data-qa=\"item-quantity-5mb36\">1\n    <div class=\"cart_item_label\">\n      <a href=\"#\" id=\"item_0_title_link_5mb36\" role=\"button\" aria-label=\"View details for Sauce Labs Bike Light\" data-qa=\"item-0-title-link-5mb36\">\n        <div class=\"inventory_item_name\" data-qa=\"inventory-item-name-5mb36\">Sauce Labs Bike Light\n      <div class=\"inventory_item_desc\" data-qa=\"inventory-item-desc-5mb36\">A red light isn't the desired state in testing but it sure helps when riding your bike at night. Wat\n      <div class=\"item_pricebar\">\n        <div class=\"inventory_item_price\" data-qa=\"inventory-item-price-5mb36\">$ 9.99"
+        }
+      ],
+      "format": {
+        "type": "object",
+        "properties": {
+          "candidates": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "selector": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "type": {
+                  "default": "css",
+                  "type": "string",
+                  "enum": [
+                    "css",
+                    "xpath"
+                  ]
+                },
+                "reason": {
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "selector"
+              ]
+            }
+          }
+        },
+        "required": [
+          "candidates"
+        ]
+      },
+      "options": {
+        "temperature": 0,
+        "num_predict": 1024,
+        "num_ctx": 8192
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "model": "llama3.1:8b",
+      "created_at": "2026-11-06T14:52:05.1341874Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"candidates\":[{\"selector\":\".inventory_item_price[data-qa=\\\"inventory-item-price-5mb36\\\"]\",\"type\":\"css\",\"reason\":\"atributo data-qa\"}, {\"selector\":\".inventory_item_price\",\"type\":\"css\",\"reason\":\"clase\"}, {\"selector\":\"//div[@data-qa='inventory-item-price-5mb36']\",\"type\":\"xpath\",\"reason\":\"atributo data-qa\"}]}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 34445695700,
+      "load_duration": 5824700,
+      "prompt_eval_count": 974,
+      "prompt_eval_cached_count": 308,
+      "prompt_eval_duration": 19050056000,
+      "eval_count": 84,
+      "eval_duration": 15382973000
+    }
+  },
+  "text": "{\"candidates\":[{\"selector\":\".inventory_item_price[data-qa=\\\"inventory-item-price-5mb36\\\"]\",\"type\":\"css\",\"reason\":\"atributo data-qa\"}, {\"selector\":\".inventory_item_price\",\"type\":\"css\",\"reason\":\"clase\"}, {\"selector\":\"//div[@data-qa='inventory-item-price-5mb36']\",\"type\":\"xpath\",\"reason\":\"atributo data-qa\"}]}",
+  "usage": {
+    "inputTokens": 974,
+    "outputTokens": 84
+  }
+}

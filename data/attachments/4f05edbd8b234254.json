@@ -1,0 +1,11 @@
+{
+  "detectedIntent": "Describir una prenda de vestir",
+  "reasoning": "El texto describe una 'mochila', que no es una prenda de vestir, sino un accesorio para transportar objetos.",
+  "matches": false,
+  "confidence": 1,
+  "actualText": "Mochila de diseño elegante con compartimentos acolchados que protegen tu portátil y tu tableta.",
+  "expectedIntent": "Describe una prenda de vestir, como una camiseta o una chaqueta",
+  "negated": true,
+  "threshold": 0.7,
+  "passed": true
+}

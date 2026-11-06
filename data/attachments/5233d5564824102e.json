@@ -1,0 +1,16 @@
+{
+  "request": {
+    "country": "ES"
+  },
+  "profile": {
+    "firstName": "Alejandro",
+    "lastName": "García Pérez",
+    "email": "agarcia95@gmail.com",
+    "phone": "+34 634 567 890",
+    "country": "ES",
+    "city": "Santa Cruz de Tenerife",
+    "address": "Calle de la Cultura, 123",
+    "postalCode": "38100",
+    "deliveryInstructions": "Dejar en la recepción, no me encuentro en casa entre las 12 y las 16"
+  }
+}

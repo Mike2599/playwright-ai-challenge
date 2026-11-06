@@ -1,0 +1,16 @@
+{
+  "request": {
+    "country": "ES"
+  },
+  "profile": {
+    "firstName": "Luis",
+    "lastName": "García",
+    "email": "luis.garcia1990@gmail.com",
+    "phone": "+34987654321",
+    "country": "ES",
+    "city": "Murcia",
+    "address": "Calle del Príncipe, 123",
+    "postalCode": "30006",
+    "deliveryInstructions": "Dejar el paquete en la buhardilla con la llave en la caja de luz"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "target": "total a pagar de la orden (Total)",
+  "brokenSelector": "[data-test=\"total-label\"]",
+  "healedSelector": "div[data-qa=\"total-label-5mb36\"]",
+  "selectorType": "css",
+  "reason": "Atributo data-qa=\"total-label-5mb36\" del elemento div",
+  "scope": ".summary_info",
+  "aiRounds": 1,
+  "candidates": [
+    {
+      "selector": "div[data-qa=\"total-label-5mb36\"]",
+      "type": "css",
+      "reason": "Atributo data-qa=\"total-label-5mb36\" del elemento div",
+      "verdict": "aceptado"
+    }
+  ],
+  "durationMs": 32898,
+  "model": "ollama/llama3.1:8b",
+  "timestamp": "2026-11-06T14:53:31.523Z"
+}

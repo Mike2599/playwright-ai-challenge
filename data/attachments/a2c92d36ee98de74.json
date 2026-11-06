@@ -1,0 +1,16 @@
+{
+  "request": {
+    "country": "US"
+  },
+  "profile": {
+    "firstName": "Dolores",
+    "lastName": "Contreras",
+    "email": "dcontreras@terra.com",
+    "phone": "+1 305 444 5678",
+    "country": "US",
+    "city": "Miami",
+    "address": "1234 SW 1st Ave, Apt 101",
+    "postalCode": "33131-2345",
+    "deliveryInstructions": "Dejar la paquetería en la recepción y llamar al teléfono 305-123-4567 para confirmar la entrega."
+  }
+}

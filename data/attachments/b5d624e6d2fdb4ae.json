@@ -1,0 +1,96 @@
+{
+  "id": 1,
+  "purpose": "self-healing: botón \"Add to cart\" del producto Sauce Labs Fleece Jacket",
+  "provider": "ollama",
+  "model": "llama3.1:8b",
+  "startedAt": "2026-11-06T14:36:16.779Z",
+  "durationMs": 46367,
+  "attempts": 1,
+  "ok": true,
+  "request": {
+    "url": "http://localhost:11434/api/chat",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "model": "llama3.1:8b",
+      "stream": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un experto en automatización web con Playwright especializado en reparar localizadores rotos.\nRecibes la descripción de un elemento, el localizador que dejó de funcionar y el estado ACTUAL del contenedor\n(árbol de accesibilidad y HTML compacto: una etiqueta por línea, la indentación indica el anidamiento).\n\nDevuelve hasta 3 candidatos ordenados del más al menos probable, con este formato JSON exacto:\n{\"candidates\":[{\"selector\":\"...\",\"type\":\"css\",\"reason\":\"...\"}]}\n\nReglas:\n- \"type\" es \"css\" (CSS estándar) o \"xpath\" (XPath 1.0). No uses pseudo-selectores propios de Playwright (:has-text, text=, >>).\n- Usa SOLO atributos y textos que aparecen en el HTML recibido; nunca inventes atributos.\n- Cada selector debe identificar exactamente UN elemento visible, salvo que se indique que se esperan VARIOS:\n  en ese caso debe seleccionar todos los elementos de ese tipo y ninguno más.\n- Prefiere, en este orden: atributos de prueba (data-*), id, name, placeholder, aria-label, y por último el texto visible (XPath).\n- Copia los valores de los atributos completos, incluidos los sufijos aleatorios que tengan."
+        },
+        {
+          "role": "user",
+          "content": "Elemento buscado: botón \"Add to cart\" del producto Sauce Labs Fleece Jacket\nTexto visible esperado en el elemento: \"Add to cart\"\nLocalizador que dejó de funcionar (TimeoutError): [data-test=\"add-to-cart-sauce-labs-fleece-jacket\"]\nContenedor analizado: .inventory_item:has(.inventory_item_name:text-is(\"Sauce Labs Fleece Jacket\"))\nÁrbol de accesibilidad del contenedor:\n- button \"View details for Sauce Labs Fleece Jacket\":\n  - img \"Sauce Labs Fleece Jacket\"\n- button \"View details for Sauce Labs Fleece Jacket\": Sauce Labs Fleece Jacket\n- text: It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office. $49.99\n- button \"Add to cart\"\nHTML actual del contenedor:\n<div class=\"inventory_item\" data-qa=\"inventory-item-n3nb8\">\n  <div class=\"inventory_item_img\">\n    <a href=\"#\" id=\"item_5_img_link_n3nb8\" role=\"button\" aria-label=\"View details for Sauce Labs Fleece Jacket\" data-qa=\"item-5-img-link-n3nb8\">\n      <img alt=\"Sauce Labs Fleece Jacket\" class=\"inventory_item_img\" data-qa=\"inventory-item-sauce-labs-fleece-jacket-img-n3nb8\">\n  <div class=\"inventory_item_description\" data-qa=\"inventory-item-description-n3nb8\">\n    <div class=\"inventory_item_label\">\n      <a href=\"#\" id=\"item_5_title_link_n3nb8\" role=\"button\" aria-label=\"View details for Sauce Labs Fleece Jacket\" data-qa=\"item-5-title-link-n3nb8\">\n        <div class=\"inventory_item_name \" data-qa=\"inventory-item-name-n3nb8\">Sauce Labs Fleece Jacket\n      <div class=\"inventory_item_desc\" data-qa=\"inventory-item-desc-n3nb8\">It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling ev\n    <div class=\"pricebar\">\n      <div class=\"inventory_item_price\" data-qa=\"inventory-item-price-n3nb8\">$ 49.99\n      <button class=\"btn btn_primary btn_small btn_inventory \" id=\"add-to-cart-sauce-labs-fleece-jacket_n3nb8\" name=\"add-to-cart-sauce-labs-fleece-jacket\" data-qa=\"add-to-cart-sauce-labs-fleece-jacket-n3nb8\">Add to cart"
+        }
+      ],
+      "format": {
+        "type": "object",
+        "properties": {
+          "candidates": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "selector": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "type": {
+                  "default": "css",
+                  "type": "string",
+                  "enum": [
+                    "css",
+                    "xpath"
+                  ]
+                },
+                "reason": {
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "selector"
+              ]
+            }
+          }
+        },
+        "required": [
+          "candidates"
+        ]
+      },
+      "options": {
+        "temperature": 0,
+        "num_predict": 1024,
+        "num_ctx": 8192
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "model": "llama3.1:8b",
+      "created_at": "2026-11-06T14:37:03.1452606Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"candidates\":[{\"selector\":\"#add-to-cart-sauce-labs-fleece-jacket_n3nb8\",\"type\":\"css\",\"reason\":\"id del botón\"}] }"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 46360483700,
+      "load_duration": 6842200,
+      "prompt_eval_count": 875,
+      "prompt_eval_cached_count": 8,
+      "prompt_eval_duration": 39745477000,
+      "eval_count": 37,
+      "eval_duration": 6596174000
+    }
+  },
+  "text": "{\"candidates\":[{\"selector\":\"#add-to-cart-sauce-labs-fleece-jacket_n3nb8\",\"type\":\"css\",\"reason\":\"id del botón\"}] }",
+  "usage": {
+    "inputTokens": 875,
+    "outputTokens": 37
+  }
+}

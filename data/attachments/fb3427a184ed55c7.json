@@ -1,0 +1,20 @@
+{
+  "target": "campo de texto Last Name (apellido)",
+  "brokenSelector": "[data-test=\"lastName\"]",
+  "healedSelector": "input[name=\"lastName\"]",
+  "selectorType": "css",
+  "reason": "El campo de texto tiene el atributo name igual a \"lastName\"",
+  "scope": ".checkout_info",
+  "aiRounds": 1,
+  "candidates": [
+    {
+      "selector": "input[name=\"lastName\"]",
+      "type": "css",
+      "reason": "El campo de texto tiene el atributo name igual a \"lastName\"",
+      "verdict": "aceptado"
+    }
+  ],
+  "durationMs": 25461,
+  "model": "ollama/llama3.1:8b",
+  "timestamp": "2026-11-06T14:50:58.645Z"
+}

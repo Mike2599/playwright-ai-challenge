@@ -1,0 +1,117 @@
+{
+  "id": 1,
+  "purpose": "synthetic-data: cliente MX",
+  "provider": "ollama",
+  "model": "llama3.1:8b",
+  "startedAt": "2026-11-06T14:46:02.648Z",
+  "durationMs": 21588,
+  "attempts": 1,
+  "ok": true,
+  "request": {
+    "url": "http://localhost:11434/api/chat",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "model": "llama3.1:8b",
+      "stream": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un generador de datos de prueba sintéticos para un e-commerce.\nGeneras perfiles de cliente FICTICIOS pero realistas y coherentes con el país pedido: nombres y apellidos típicos de ese país,\nuna ciudad real, una dirección con el formato local, un código postal que exista para esa ciudad y un teléfono con el indicativo internacional.\nNunca uses datos de personas reales ni valores de ejemplo como \"John Doe\", \"Test\" o \"12345\".\nResponde solo con JSON."
+        },
+        {
+          "role": "user",
+          "content": "País: México (código ISO \"MX\", indicativo +52).\nFormato del código postal: 5 dígitos.\nRango de edad del cliente: 18-25.\nEscenario de compra: regalo de cumpleaños con entrega sorpresa.\nVariación aleatoria: b953a3da-0f56-47af-b357-c85ea4ec6437.\nDevuelve este JSON:\n{\"firstName\":\"...\",\"lastName\":\"...\",\"email\":\"...\",\"phone\":\"+52 ...\",\"country\":\"MX\",\"city\":\"...\",\"address\":\"...\",\"postalCode\":\"...\",\"deliveryInstructions\":\"instrucción de entrega concreta y coherente con el escenario\"}"
+        }
+      ],
+      "format": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 40,
+            "pattern": "^[\\p{L}][\\p{L}' .-]*$"
+          },
+          "lastName": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 40,
+            "pattern": "^[\\p{L}][\\p{L}' .-]*$"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string",
+            "const": "MX"
+          },
+          "city": {
+            "type": "string",
+            "minLength": 2
+          },
+          "address": {
+            "type": "string",
+            "minLength": 5
+          },
+          "postalCode": {
+            "type": "string",
+            "pattern": "^\\d{5}$"
+          },
+          "deliveryInstructions": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName",
+          "email",
+          "phone",
+          "country",
+          "city",
+          "address",
+          "postalCode",
+          "deliveryInstructions"
+        ]
+      },
+      "options": {
+        "temperature": 1,
+        "num_predict": 500,
+        "num_ctx": 8192
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "model": "llama3.1:8b",
+      "created_at": "2026-11-06T14:46:24.2354532Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"firstName\":\"Sofía\",\"lastName\":\"García\",\"email\":\"sofia.garcia@gmail.com\",\"phone\":\"+52 55 1234 5678\",\"country\":\"MX\",\"city\":\"Coyoacán\",\"address\":\"Calle 16 de Septiembre 123, Col. Cuahimalpa\",\"postalCode\":\"10700\",\"deliveryInstructions\":\"Dejar en la puerta principal del edificio sin tocar el timbre, para que sea un sorpresa para mi amiga que cumple años\"}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 21586696000,
+      "load_duration": 6298200,
+      "prompt_eval_count": 270,
+      "prompt_eval_cached_count": 124,
+      "prompt_eval_duration": 3348332000,
+      "eval_count": 109,
+      "eval_duration": 18213722000
+    }
+  },
+  "text": "{\"firstName\":\"Sofía\",\"lastName\":\"García\",\"email\":\"sofia.garcia@gmail.com\",\"phone\":\"+52 55 1234 5678\",\"country\":\"MX\",\"city\":\"Coyoacán\",\"address\":\"Calle 16 de Septiembre 123, Col. Cuahimalpa\",\"postalCode\":\"10700\",\"deliveryInstructions\":\"Dejar en la puerta principal del edificio sin tocar el timbre, para que sea un sorpresa para mi amiga que cumple años\"}",
+  "usage": {
+    "inputTokens": 270,
+    "outputTokens": 109
+  }
+}

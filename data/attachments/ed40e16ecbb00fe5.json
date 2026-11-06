@@ -1,0 +1,20 @@
+{
+  "target": "nombres de los productos que hay en el carrito",
+  "brokenSelector": "[data-test=\"inventory-item-name\"]",
+  "healedSelector": ".cart_item_label a",
+  "selectorType": "css",
+  "reason": "El selector selecciona todos los elementos de tipo 'cart_item_label a' que contienen el texto 'Sauce Labs Fleece Jacket'.",
+  "scope": ".cart_list",
+  "aiRounds": 1,
+  "candidates": [
+    {
+      "selector": ".cart_item_label a",
+      "type": "css",
+      "reason": "El selector selecciona todos los elementos de tipo 'cart_item_label a' que contienen el texto 'Sauce Labs Fleece Jacket'.",
+      "verdict": "aceptado"
+    }
+  ],
+  "durationMs": 40073,
+  "model": "ollama/llama3.1:8b",
+  "timestamp": "2026-11-06T14:38:27.864Z"
+}

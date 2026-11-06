@@ -1,0 +1,20 @@
+{
+  "target": "texto descriptivo del mensaje de confirmación de la compra (debajo del título)",
+  "brokenSelector": "[data-test=\"complete-text\"]",
+  "healedSelector": "div[data-qa=\"complete-text-5mb36\"]",
+  "selectorType": "css",
+  "reason": "atributo de prueba data-qa",
+  "scope": ".checkout_complete_container",
+  "aiRounds": 1,
+  "candidates": [
+    {
+      "selector": "div[data-qa=\"complete-text-5mb36\"]",
+      "type": "css",
+      "reason": "atributo de prueba data-qa",
+      "verdict": "aceptado"
+    }
+  ],
+  "durationMs": 24864,
+  "model": "ollama/llama3.1:8b",
+  "timestamp": "2026-11-06T14:54:47.383Z"
+}

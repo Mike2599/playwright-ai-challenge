@@ -1,0 +1,117 @@
+{
+  "id": 1,
+  "purpose": "synthetic-data: cliente ES",
+  "provider": "ollama",
+  "model": "llama3.1:8b",
+  "startedAt": "2026-11-06T14:47:16.033Z",
+  "durationMs": 16358,
+  "attempts": 1,
+  "ok": true,
+  "request": {
+    "url": "http://localhost:11434/api/chat",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "model": "llama3.1:8b",
+      "stream": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un generador de datos de prueba sintéticos para un e-commerce.\nGeneras perfiles de cliente FICTICIOS pero realistas y coherentes con el país pedido: nombres y apellidos típicos de ese país,\nuna ciudad real, una dirección con el formato local, un código postal que exista para esa ciudad y un teléfono con el indicativo internacional.\nNunca uses datos de personas reales ni valores de ejemplo como \"John Doe\", \"Test\" o \"12345\".\nResponde solo con JSON."
+        },
+        {
+          "role": "user",
+          "content": "País: España (código ISO \"ES\", indicativo +34).\nFormato del código postal: 5 dígitos; los dos primeros son la provincia (01-52).\nRango de edad del cliente: 66-80.\nVariación aleatoria: a6ae0fc9-1a53-4f19-ba76-91e5032f37d2.\nDevuelve este JSON:\n{\"firstName\":\"...\",\"lastName\":\"...\",\"email\":\"...\",\"phone\":\"+34 ...\",\"country\":\"ES\",\"city\":\"...\",\"address\":\"...\",\"postalCode\":\"...\",\"deliveryInstructions\":\"instrucción de entrega concreta y coherente con el escenario\"}"
+        }
+      ],
+      "format": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 40,
+            "pattern": "^[\\p{L}][\\p{L}' .-]*$"
+          },
+          "lastName": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 40,
+            "pattern": "^[\\p{L}][\\p{L}' .-]*$"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string",
+            "const": "ES"
+          },
+          "city": {
+            "type": "string",
+            "minLength": 2
+          },
+          "address": {
+            "type": "string",
+            "minLength": 5
+          },
+          "postalCode": {
+            "type": "string",
+            "pattern": "^(0[1-9]|[1-4]\\d|5[0-2])\\d{3}$"
+          },
+          "deliveryInstructions": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName",
+          "email",
+          "phone",
+          "country",
+          "city",
+          "address",
+          "postalCode",
+          "deliveryInstructions"
+        ]
+      },
+      "options": {
+        "temperature": 1,
+        "num_predict": 500,
+        "num_ctx": 8192
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "model": "llama3.1:8b",
+      "created_at": "2026-11-06T14:47:32.3904916Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"firstName\":\"Luis\",\"lastName\":\"García\",\"email\":\"luis.garcia1990@gmail.com\",\"phone\":\"+34987654321\",\"country\":\"ES\",\"city\":\"Murcia\",\"address\":\"Calle del Príncipe, 123\",\"postalCode\":\"30006\",\"deliveryInstructions\":\"Dejar el paquete en la buhardilla con la llave en la caja de luz\"}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 16356319000,
+      "load_duration": 7438300,
+      "prompt_eval_count": 269,
+      "prompt_eval_cached_count": 169,
+      "prompt_eval_duration": 2282047000,
+      "eval_count": 84,
+      "eval_duration": 14033598000
+    }
+  },
+  "text": "{\"firstName\":\"Luis\",\"lastName\":\"García\",\"email\":\"luis.garcia1990@gmail.com\",\"phone\":\"+34987654321\",\"country\":\"ES\",\"city\":\"Murcia\",\"address\":\"Calle del Príncipe, 123\",\"postalCode\":\"30006\",\"deliveryInstructions\":\"Dejar el paquete en la buhardilla con la llave en la caja de luz\"}",
+  "usage": {
+    "inputTokens": 269,
+    "outputTokens": 84
+  }
+}

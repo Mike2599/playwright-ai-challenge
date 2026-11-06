@@ -1,0 +1,271 @@
+[
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/inventory.html",
+    "resourceType": "document",
+    "requestHeaders": {
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 29,
+    "status": 404,
+    "responseHeaders": {
+      "content-length": "1436",
+      "content-type": "text/html; charset=utf-8",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "5a0a1620d57593a4ae4f7f9badf48d98bc2d1623",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "9008:1108A6:29D640:343876:6AEDDC89",
+      "x-proxy-cache": "MISS",
+      "x-served-by": "cache-bog-skbo2340038-BOG",
+      "x-timer": "S1793976939.395637,VS0,VE1"
+    },
+    "responseBody": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"robots\" content=\"noindex\">\n    <title>Single Page Apps for GitHub Pages</title>\n    <script type=\"text/javascript\">\n      // Single Page Apps for GitHub Pages\n      // MIT License\n      // https://github.com/rafgraph/spa-github-pages\n      // This script takes the current url and converts the path and query\n      // string into just a query string, and then redirects the browser\n      // to the new url with only a query string and hash fragment,\n      // e.g. https://www.foo.tld/one/two?a=b&c=d#qwe, becomes\n      // https://www.foo.tld/?/one/two&a=b~and~c=d#qwe\n      // Note: this 404.html file must be at least 512 bytes for it to work\n      // with Internet Explorer (it is currently > 512 bytes)\n\n      // If you're creating a Project Pages site and NOT using a custom domain,\n      // then set pathSegmentsToKeep to 1 (enterprise users may need to set it to > 1).\n      // This way the code will only replace the route part of the path, and not\n      // the real directory in which the app resides, for example:\n      // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes\n      // https://username.github.io/repo-name/?/one/two&a=b~and~c=d#qwe\n      // Otherwise, leave pathSegmentsToKeep as 0.\n      var pathSegmentsToKeep = 0;\n\n      var l = window.location;\n\n      // If the path is explicitly for storybook, don't touch it\n      if (l.pathname.indexOf('/storybook') !== 0) {\n        // Build origin\n        var origin = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '');\n\n        // Split pathname into segments (skip leading empty segment from the leading slash)\n        var segments = l.pathname.split('/').filter(function (s) { return s.length > 0; });\n\n        // Keep the first `pathSegmentsToKeep` segments as the base (for project pages)\n        var baseSegments = segments.slice(0, pathSegmentsToKeep);\n        var routeSegments = segments.slice(pathSegmentsToKeep);\n\n        // Rebuild base path (leading slash only if there are base segments)\n        var base = baseSegments.length ? '/' + baseSegments.join('/') : '';\n\n        // Redirect when the pathname contains '/v1' (case-insensitive) per request\n        var containsV1 = l.pathname && l.pathname.toLowerCase().indexOf('/v1') !== -1;\n\n        if (containsV1) {\n          var redirectUrlRoot = origin + base + '/?/';\n          l.replace(redirectUrlRoot);\n        } else {\n          // No 'v1' found: proceed with the normal SPA redirect behavior\n          // Remove any exact 'v1' path segments just in case (no-op if none exist)\n          var filteredRouteSegments = routeSegments.filter(function (s) { return s !== 'v1'; });\n\n          // Encode route and original search by replacing & with ~and~ (keeps compatibility with SPA decoding)\n          var encodedRoute = filteredRouteSegments.join('/').replace(/&/g, '~and~');\n          var encodedSearch = l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '';\n          var hash = l.hash || '';\n\n          // Construct redirect URL. If there is no base (site root), base is '', so this becomes origin + '/?/'...\n          var redirectUrlFull = origin + base + '/?/' + encodedRoute + encodedSearch + hash;\n\n          l.replace(redirectUrlFull);\n        }\n      } else {\n        // Do not redirect storybook paths\n      }\n    </script>\n</head>\n<body>\n</body>\n</html>\n"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/?/inventory.html",
+    "resourceType": "document",
+    "requestHeaders": {
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 11,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "725",
+      "content-type": "text/html; charset=utf-8",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "f29f6f8e4ab60b0eaed14fe27b45cea402daf31d",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "1CC8:2AD93A:5EDFB5:6912BD:6AEDEA56",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340038-BOG",
+      "x-timer": "S1793976939.414178,VS0,VE1"
+    },
+    "responseBody": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\" />\n  <link rel=\"icon\" href=\"/favicon.ico\" />\n  <meta name=\"robots\" content=\"noindex\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n  <meta name=\"theme-color\" content=\"#ffffff\" />\n  <meta name=\"description\" content=\"Sauce Labs Swag Labs app\" />\n  <link rel=\"apple-touch-icon\" href=\"/icon-192x192.png\" />\n  <link rel=\"manifest\" href=\"/manifest.json\"/>\n\n  <!-- Single Page Apps for GitHub Pages -->\n  <script type=\"text/javascript\">\n    // https://github.com/rafgraph/spa-github-pages\n    (function(l) {\n      if (l.search[1] === '/' ) {\n        var decoded = l.search.slice(1).split('&').map(function(s) {\n          return s.replace(/~and~/g, '&')\n        }).join('?');\n        window.history.replaceState(null, null,\n                l.pathname.slice(0, -1) + decoded + l.hash\n        );\n      }\n    }(window.location))\n  </script>\n\n  <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500\">\n  <title>Swag Labs</title>\n  <script type=\"module\" crossorigin src=\"/assets/index-DnLqFcJI.js\"></script>\n  <link rel=\"stylesheet\" crossorigin href=\"/assets/index-aSZoiKGF.css\">\n</head>\n<body>\n  <noscript>You need to enable JavaScript to run this app.</noscript>\n  <div id=\"root\"></div>\n</body>\n</html>\n\n"
+  },
+  {
+    "method": "GET",
+    "url": "https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500",
+    "resourceType": "stylesheet",
+    "requestHeaders": {
+      "accept": "text/css,*/*;q=0.1",
+      "referer": "https://www.saucedemo.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "failure": "net::ERR_INTERNET_DISCONNECTED"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/index-aSZoiKGF.css",
+    "resourceType": "stylesheet",
+    "requestHeaders": {
+      "accept": "text/css,*/*;q=0.1",
+      "referer": "https://www.saucedemo.com/?/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 12,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "10726",
+      "content-type": "text/css; charset=utf-8",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "ced3bb0ddc148e54ebc6778f6df67c96aa5bd4b0",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "FABA:1970BD:5C960B:662447:6AEDE5D9",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340038-BOG",
+      "x-timer": "S1793976939.427867,VS0,VE1"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/index-DnLqFcJI.js",
+    "resourceType": "script",
+    "requestHeaders": {
+      "accept": "*/*",
+      "referer": "https://www.saucedemo.com/?/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 27,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "176641",
+      "content-type": "application/javascript; charset=utf-8",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "15c4171a0ed01f5619a2b1d7c2dfd6b0e1c67e3d",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "12AA:13E76F:5BD107:654A1D:6AEDE538",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340038-BOG",
+      "x-timer": "S1793976939.427143,VS0,VE2"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/sauce-backpack-1200x1500-CjRW-Djj.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 18,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "19681",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "87b574c5ccdd55f9a33f3e0e8d1fabc4a84e2a46",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "CE4E:328421:5ACC95:648AD2:6AEDE71E",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340038-BOG",
+      "x-timer": "S1793976940.527558,VS0,VE2"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/bike-light-1200x1500-DxcZRFOA.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 22,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "11975",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "2ca0820c5fa731014b966a463fd04ff3c231580c",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "62BA:250944:5C5ADB:669211:6AEDEA56",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340038-BOG",
+      "x-timer": "S1793976940.528511,VS0,VE2"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/bolt-shirt-1200x1500-mR0ldpVS.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 23,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "14983",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "ffd8b89803b7bfade51bb943175fd25f004481f9",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "B912:AC1DF:5965B9:6355F2:6AEDE872",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340038-BOG",
+      "x-timer": "S1793976940.528531,VS0,VE2"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/red-onesie-1200x1500-BrSuq0ic.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 23,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "18574",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "fc118dea7ad7a93cf009e81430c021ed132dbee0",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "3EC4:10A21F:57173D:610D56:6AEDE89A",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340038-BOG",
+      "x-timer": "S1793976940.529138,VS0,VE2"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/red-tatt-1200x1500-E-qp6aYf.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 24,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "30463",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "f2af162d166c11dc01ca23e7b947b36958505930",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "15B4:22832:5935C2:604384:6AEDDADE",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340038-BOG",
+      "x-timer": "S1793976940.528860,VS0,VE2"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/sauce-pullover-1200x1500-BfbI-PSd.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 28,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "50028",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "0b806f6a8ca3f1a33b80e61fbcc2433d1a942074",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "A1F8:3724CF:613C27:6B7379:6AEDEA56",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340038-BOG",
+      "x-timer": "S1793976940.529313,VS0,VE2"
+    }
+  }
+]

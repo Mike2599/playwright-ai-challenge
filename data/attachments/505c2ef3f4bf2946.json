@@ -1,0 +1,18 @@
+{
+  "request": {
+    "country": "MX",
+    "scenario": "regalo de cumpleaños con entrega sorpresa",
+    "exclude": []
+  },
+  "profile": {
+    "firstName": "Sofía",
+    "lastName": "García",
+    "email": "sofia.garcia@gmail.com",
+    "phone": "+52 55 1234 5678",
+    "country": "MX",
+    "city": "Coyoacán",
+    "address": "Calle 16 de Septiembre 123, Col. Cuahimalpa",
+    "postalCode": "10700",
+    "deliveryInstructions": "Dejar en la puerta principal del edificio sin tocar el timbre, para que sea un sorpresa para mi amiga que cumple años"
+  }
+}

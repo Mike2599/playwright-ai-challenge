@@ -1,0 +1,11 @@
+{
+  "detectedIntent": "La compra se completó con éxito, se agradece al cliente, se informa que el pedido está en camino, tono positivo",
+  "reasoning": "El texto confirma que la compra se completó con éxito (\"Recibimos tu pedido\"). Agradece al cliente (\"¡Gracias por tu compra!\"). Informa que el pedido está en camino (\"ya lo estamos preparando para enviártelo lo antes posible\"). El tono es positivo, ya que utiliza un lenguaje amable y agradecido. Por lo tanto, el texto cumple con la intención esperada.",
+  "matches": true,
+  "confidence": 1,
+  "actualText": "¡Gracias por tu compra!\nRecibimos tu pedido y ya lo estamos preparando para enviártelo lo antes posible.",
+  "expectedIntent": "Confirma que la compra se completó con éxito, agradece al cliente y le informa que su pedido va en camino, con un tono positivo",
+  "negated": false,
+  "threshold": 0.7,
+  "passed": true
+}

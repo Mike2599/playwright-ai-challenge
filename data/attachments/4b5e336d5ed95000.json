@@ -1,0 +1,20 @@
+{
+  "target": "campo de texto First Name (nombre)",
+  "brokenSelector": "[data-test=\"firstName\"]",
+  "healedSelector": "input[name=\"firstName\"]",
+  "selectorType": "css",
+  "reason": "atributo name",
+  "scope": ".checkout_info",
+  "aiRounds": 1,
+  "candidates": [
+    {
+      "selector": "input[name=\"firstName\"]",
+      "type": "css",
+      "reason": "atributo name",
+      "verdict": "aceptado"
+    }
+  ],
+  "durationMs": 10976,
+  "model": "ollama/llama3.1:8b",
+  "timestamp": "2026-11-06T14:50:30.137Z"
+}

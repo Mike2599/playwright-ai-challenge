@@ -1,0 +1,96 @@
+{
+  "id": 5,
+  "purpose": "self-healing: enlace al carrito de compras (ícono del carrito en el encabezado)",
+  "provider": "ollama",
+  "model": "llama3.1:8b",
+  "startedAt": "2026-11-06T14:49:07.657Z",
+  "durationMs": 13546,
+  "attempts": 1,
+  "ok": true,
+  "request": {
+    "url": "http://localhost:11434/api/chat",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "model": "llama3.1:8b",
+      "stream": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un experto en automatización web con Playwright especializado en reparar localizadores rotos.\nRecibes la descripción de un elemento, el localizador que dejó de funcionar y el estado ACTUAL del contenedor\n(árbol de accesibilidad y HTML compacto: una etiqueta por línea, la indentación indica el anidamiento).\n\nDevuelve hasta 3 candidatos ordenados del más al menos probable, con este formato JSON exacto:\n{\"candidates\":[{\"selector\":\"...\",\"type\":\"css\",\"reason\":\"...\"}]}\n\nReglas:\n- \"type\" es \"css\" (CSS estándar) o \"xpath\" (XPath 1.0). No uses pseudo-selectores propios de Playwright (:has-text, text=, >>).\n- Usa SOLO atributos y textos que aparecen en el HTML recibido; nunca inventes atributos.\n- Cada selector debe identificar exactamente UN elemento visible, salvo que se indique que se esperan VARIOS:\n  en ese caso debe seleccionar todos los elementos de ese tipo y ninguno más.\n- Prefiere, en este orden: atributos de prueba (data-*), id, name, placeholder, aria-label, y por último el texto visible (XPath).\n- Copia los valores de los atributos completos, incluidos los sufijos aleatorios que tengan."
+        },
+        {
+          "role": "user",
+          "content": "Elemento buscado: enlace al carrito de compras (ícono del carrito en el encabezado)\nLocalizador que dejó de funcionar (TimeoutError): [data-test=\"shopping-cart-link\"]\nContenedor analizado: .shopping_cart_container\nÁrbol de accesibilidad del contenedor:\n- button \"Cart, 2 items\": \"2\"\nHTML actual del contenedor:\n<div id=\"shopping_cart_container\" class=\"shopping_cart_container\">\n  <a class=\"shopping_cart_link\" role=\"button\" aria-label=\"Cart, 2 items\" data-qa=\"shopping-cart-link-5mb36\">\n    <span class=\"shopping_cart_badge\" data-qa=\"shopping-cart-badge-5mb36\">2"
+        }
+      ],
+      "format": {
+        "type": "object",
+        "properties": {
+          "candidates": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "selector": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "type": {
+                  "default": "css",
+                  "type": "string",
+                  "enum": [
+                    "css",
+                    "xpath"
+                  ]
+                },
+                "reason": {
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "selector"
+              ]
+            }
+          }
+        },
+        "required": [
+          "candidates"
+        ]
+      },
+      "options": {
+        "temperature": 0,
+        "num_predict": 1024,
+        "num_ctx": 8192
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "model": "llama3.1:8b",
+      "created_at": "2026-11-06T14:49:21.201969Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"candidates\":[{\"selector\":\"[data-qa=\\\"shopping-cart-link-5mb36\\\"]\",\"type\":\"css\",\"reason\":\"atributo de prueba data-qa\"}] }"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 13543414100,
+      "load_duration": 5242200,
+      "prompt_eval_count": 461,
+      "prompt_eval_cached_count": 308,
+      "prompt_eval_duration": 7603433000,
+      "eval_count": 36,
+      "eval_duration": 5929783000
+    }
+  },
+  "text": "{\"candidates\":[{\"selector\":\"[data-qa=\\\"shopping-cart-link-5mb36\\\"]\",\"type\":\"css\",\"reason\":\"atributo de prueba data-qa\"}] }",
+  "usage": {
+    "inputTokens": 461,
+    "outputTokens": 36
+  }
+}
