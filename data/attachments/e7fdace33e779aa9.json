@@ -1,0 +1,11 @@
+{
+  "detectedIntent": "La compra no se completó con éxito, se canceló y no se cobró nada. Se le devuelve a la página de inicio.",
+  "reasoning": "El texto comunica que la compra fue cancelada y no se cobró nada, lo que contradice la intención de confirmar la compra exitosa. Además, el tono es neutral y no positivo como se espera.",
+  "matches": false,
+  "confidence": 1,
+  "actualText": "Payment declined\nWe could not process your card. Your order has been cancelled and nothing was charged.\nBack Home",
+  "expectedIntent": "Confirma que la compra se completó con éxito, agradece al cliente y le informa que su pedido va en camino, con un tono positivo",
+  "negated": true,
+  "threshold": 0.7,
+  "passed": true
+}

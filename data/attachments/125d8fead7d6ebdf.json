@@ -1,0 +1,16 @@
+{
+  "request": {
+    "country": "ES"
+  },
+  "profile": {
+    "firstName": "MaríaÓn Rúncuelos",
+    "lastName": "Gómez Díaz",
+    "email": "marian.rangelos@live.com",
+    "phone": "+34 963765432",
+    "country": "ES",
+    "city": "Valência",
+    "address": "Calle del Prado 12, 3º planta",
+    "postalCode": "46001",
+    "deliveryInstructions": "Dejar la mercancía en la entrada principal de la casa, en la caja de luz."
+  }
+}

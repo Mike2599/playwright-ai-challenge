@@ -1,0 +1,20 @@
+{
+  "target": "botón \"Add to cart\" del producto Sauce Labs Bolt T-Shirt",
+  "brokenSelector": "[data-test=\"add-to-cart-sauce-labs-bolt-t-shirt\"]",
+  "healedSelector": "#add-to-cart-sauce-labs-bolt-t-shirt_38h3i",
+  "selectorType": "css",
+  "reason": "id del botón",
+  "scope": ".inventory_item:has(.inventory_item_name:text-is(\"Sauce Labs Bolt T-Shirt\"))",
+  "aiRounds": 1,
+  "candidates": [
+    {
+      "selector": "#add-to-cart-sauce-labs-bolt-t-shirt_38h3i",
+      "type": "css",
+      "reason": "id del botón",
+      "verdict": "aceptado"
+    }
+  ],
+  "durationMs": 41791,
+  "model": "ollama/llama3.1:8b",
+  "timestamp": "2026-11-06T14:01:54.504Z"
+}

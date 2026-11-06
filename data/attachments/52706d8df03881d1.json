@@ -1,0 +1,11 @@
+{
+  "detectedIntent": "La mochila es ligera y moderna, está pensada para proteger el portátil y la tablet.",
+  "reasoning": "El texto comunica que la mochila es ligera y moderna, lo cual es consistente con la intención de describir una mochila con estilo. Además, se menciona que está pensada para proteger el portátil y la tablet, lo cual coincide con la intención de proteger el portátil y la tableta. El tono del texto es descriptivo y objetivo, lo cual es consistente con la intención de describir la mochila de manera neutral.",
+  "matches": true,
+  "confidence": 1,
+  "actualText": "Mochila ligera y moderna, pensada para llevar el computador portátil y la tablet bien protegidos.",
+  "expectedIntent": "Describe una mochila con estilo que protege el portátil (laptop) y la tableta",
+  "negated": false,
+  "threshold": 0.7,
+  "passed": true
+}

@@ -1,0 +1,20 @@
+{
+  "target": "botón Continue del formulario de checkout",
+  "brokenSelector": "[data-test=\"continue\"]",
+  "healedSelector": "#continue_ky00q",
+  "selectorType": "css",
+  "reason": "id del botón Continue",
+  "scope": ".checkout_buttons",
+  "aiRounds": 1,
+  "candidates": [
+    {
+      "selector": "#continue_ky00q",
+      "type": "css",
+      "reason": "id del botón Continue",
+      "verdict": "aceptado"
+    }
+  ],
+  "durationMs": 20186,
+  "model": "ollama/llama3.1:8b",
+  "timestamp": "2026-11-06T14:20:23.261Z"
+}

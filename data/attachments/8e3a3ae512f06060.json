@@ -1,0 +1,20 @@
+{
+  "target": "subtotal de la orden (Item total)",
+  "brokenSelector": "[data-test=\"subtotal-label\"]",
+  "healedSelector": "div[data-qa=\"subtotal-label-ky00q\"]",
+  "selectorType": "css",
+  "reason": "atributo data-qa",
+  "scope": ".summary_info",
+  "aiRounds": 1,
+  "candidates": [
+    {
+      "selector": "div[data-qa=\"subtotal-label-ky00q\"]",
+      "type": "css",
+      "reason": "atributo data-qa",
+      "verdict": "aceptado"
+    }
+  ],
+  "durationMs": 26052,
+  "model": "ollama/llama3.1:8b",
+  "timestamp": "2026-11-06T14:21:43.247Z"
+}

@@ -1,0 +1,1 @@
+[{"values":["local"],"name":"TEST_ENV"},{"values":["https://www.saucedemo.com"],"name":"BASE_URL"},{"values":["ollama"],"name":"AI_PROVIDER"},{"values":["llama3.1:8b"],"name":"AI_MODEL"},{"values":["chromium"],"name":"BROWSERS"},{"values":["v24.14.0"],"name":"NODE_VERSION"},{"values":["Windows_NT 10.0.26300"],"name":"OS"}]

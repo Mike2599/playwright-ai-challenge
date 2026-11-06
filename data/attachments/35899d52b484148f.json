@@ -1,0 +1,20 @@
+{
+  "target": "título del mensaje de confirmación de la compra",
+  "brokenSelector": "[data-test=\"complete-header\"]",
+  "healedSelector": "h2.complete-header",
+  "selectorType": "css",
+  "reason": "atributo data-qa=\"complete-header-ky00q\"",
+  "scope": ".checkout_complete_container",
+  "aiRounds": 1,
+  "candidates": [
+    {
+      "selector": "h2.complete-header",
+      "type": "css",
+      "reason": "atributo data-qa=\"complete-header-ky00q\"",
+      "verdict": "aceptado"
+    }
+  ],
+  "durationMs": 27396,
+  "model": "ollama/llama3.1:8b",
+  "timestamp": "2026-11-06T14:24:02.581Z"
+}

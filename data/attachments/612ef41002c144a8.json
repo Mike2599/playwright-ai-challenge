@@ -1,0 +1,320 @@
+[
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/inventory.html",
+    "resourceType": "document",
+    "requestHeaders": {
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 44,
+    "status": 404,
+    "responseHeaders": {
+      "content-length": "1436",
+      "content-type": "text/html; charset=utf-8",
+      "x-cache": "HIT",
+      "x-cache-hits": "0",
+      "x-fastly-request-id": "dd4312145abd6bd07699cb62128ee45860a9d172",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "9008:1108A6:29D640:343876:6AEDDC89",
+      "x-proxy-cache": "MISS",
+      "x-served-by": "cache-bog-skbo2340046-BOG",
+      "x-timer": "S1793974143.326227,VS0,VE1"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/?/inventory.html",
+    "resourceType": "document",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 10,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "725",
+      "content-type": "text/html; charset=utf-8",
+      "x-cache": "HIT",
+      "x-cache-hits": "0",
+      "x-fastly-request-id": "fa9b835d55410954f92ed86687afe6523860bd51",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "E936:378F2:2AC0EA:3570D3:6AEDDE33",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340046-BOG",
+      "x-timer": "S1793974143.347039,VS0,VE2"
+    },
+    "responseBody": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\" />\n  <link rel=\"icon\" href=\"/favicon.ico\" />\n  <meta name=\"robots\" content=\"noindex\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n  <meta name=\"theme-color\" content=\"#ffffff\" />\n  <meta name=\"description\" content=\"Sauce Labs Swag Labs app\" />\n  <link rel=\"apple-touch-icon\" href=\"/icon-192x192.png\" />\n  <link rel=\"manifest\" href=\"/manifest.json\"/>\n\n  <!-- Single Page Apps for GitHub Pages -->\n  <script type=\"text/javascript\">\n    // https://github.com/rafgraph/spa-github-pages\n    (function(l) {\n      if (l.search[1] === '/' ) {\n        var decoded = l.search.slice(1).split('&').map(function(s) {\n          return s.replace(/~and~/g, '&')\n        }).join('?');\n        window.history.replaceState(null, null,\n                l.pathname.slice(0, -1) + decoded + l.hash\n        );\n      }\n    }(window.location))\n  </script>\n\n  <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500\">\n  <title>Swag Labs</title>\n  <script type=\"module\" crossorigin src=\"/assets/index-DnLqFcJI.js\"></script>\n  <link rel=\"stylesheet\" crossorigin href=\"/assets/index-aSZoiKGF.css\">\n</head>\n<body>\n  <noscript>You need to enable JavaScript to run this app.</noscript>\n  <div id=\"root\"></div>\n</body>\n</html>\n\n"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/index-aSZoiKGF.css",
+    "resourceType": "stylesheet",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/?/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 12,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "10726",
+      "content-type": "text/css; charset=utf-8",
+      "x-cache": "HIT",
+      "x-cache-hits": "0",
+      "x-fastly-request-id": "cefebff7016261121faa11c7e936458f33262fee",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "298E:3B30DE:295573:33DDF3:6AEDDD54",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "REVALIDATED",
+      "x-served-by": "cache-bog-skbo2340046-BOG",
+      "x-timer": "S1793974143.365175,VS0,VE1"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/index-DnLqFcJI.js",
+    "resourceType": "script",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/?/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 129,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "176641",
+      "content-type": "application/javascript; charset=utf-8",
+      "x-cache": "HIT",
+      "x-cache-hits": "0",
+      "x-fastly-request-id": "e3968ff488d77623261e8c2952ad2f3779dae06c",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "6D52:20DAC8:590102:601104:6AEDDADD",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340046-BOG",
+      "x-timer": "S1793974143.365156,VS0,VE74"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500",
+    "resourceType": "stylesheet",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 315,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "private, max-age=86400, stale-while-revalidate=604800",
+      "content-type": "text/css; charset=utf-8",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "0"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/sauce-backpack-1200x1500-CjRW-Djj.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 27,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "19681",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "0",
+      "x-fastly-request-id": "723a13f6cdcc5b901106cadb48818fccac078185",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "B136:2AD93A:4B9FF9:53FDFD:6AEDDDA5",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340046-BOG",
+      "x-timer": "S1793974144.813839,VS0,VE2"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/sauce-pullover-1200x1500-BfbI-PSd.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 32,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "50028",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "0",
+      "x-fastly-request-id": "049b7a7593f6d995d207ddf505141515c40b69f7",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "2A50:14A162:3D1673:43FB6D:6AEDD348",
+      "x-proxy-cache": "REVALIDATED",
+      "x-served-by": "cache-bog-skbo2340046-BOG",
+      "x-timer": "S1793974144.815039,VS0,VE2"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/bolt-shirt-1200x1500-mR0ldpVS.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 28,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "14983",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "0",
+      "x-fastly-request-id": "d12c2b573061bee67b528fc4cdb3a3d712728afb",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "F122:A7DB2:2DA955:382F15:6AEDDD55",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340046-BOG",
+      "x-timer": "S1793974144.815343,VS0,VE2"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/red-onesie-1200x1500-BrSuq0ic.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 102,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "18574",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "0",
+      "x-fastly-request-id": "40d0ce647d19c026d6fd36409f352b27e68b4024",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "E67C:1CB7:205832:27FCD0:6AEDDC85",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "REVALIDATED",
+      "x-served-by": "cache-bog-skbo2340046-BOG",
+      "x-timer": "S1793974144.814986,VS0,VE74"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/bike-light-1200x1500-DxcZRFOA.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 122,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "11975",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "0",
+      "x-fastly-request-id": "7147ac4484b02099607cc744124c9e9ac80bb2a4",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "4F8C:C101:27B51E:3217BC:6AEDDC83",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340046-BOG",
+      "x-timer": "S1793974144.815509,VS0,VE91"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/red-tatt-1200x1500-E-qp6aYf.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 160,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "30463",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "0",
+      "x-fastly-request-id": "b266bfe11f623d85d55a217e952650c782bfc852",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "15B4:22832:5935C2:604384:6AEDDADE",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340046-BOG",
+      "x-timer": "S1793974144.816102,VS0,VE98"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://fonts.gstatic.com/s/dmmono/v16/aFTR7PB1QTsUX8KYvumzEYOtbQ.woff2",
+    "resourceType": "font",
+    "requestHeaders": {
+      "referer": "https://fonts.googleapis.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 292,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "public, max-age=31536000",
+      "content-length": "14988",
+      "content-type": "font/woff2",
+      "x-content-type-options": "nosniff",
+      "x-xss-protection": "0"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://fonts.gstatic.com/s/dmmono/v16/aFTU7PB1QTsUX8KYthqQBA.woff2",
+    "resourceType": "font",
+    "requestHeaders": {
+      "referer": "https://fonts.googleapis.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 297,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "public, max-age=31536000",
+      "content-length": "14820",
+      "content-type": "font/woff2",
+      "x-content-type-options": "nosniff",
+      "x-xss-protection": "0"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2",
+    "resourceType": "font",
+    "requestHeaders": {
+      "referer": "https://fonts.googleapis.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 306,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "public, max-age=31536000",
+      "content-length": "36932",
+      "content-type": "font/woff2",
+      "x-content-type-options": "nosniff",
+      "x-xss-protection": "0"
+    }
+  }
+]

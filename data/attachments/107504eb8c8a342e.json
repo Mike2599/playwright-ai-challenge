@@ -1,0 +1,11 @@
+{
+  "detectedIntent": "El texto comunica que el pedido se ha realizado, pero con un tono negativo y desagradable. También pide al cliente que deje de enviar correos electrónicos. El tono es despectivo y no amable.",
+  "reasoning": "El texto no cumple con la intención de confirmar el pedido con un tono amable y cordial. En su lugar, critica al cliente y pide que deje de enviar correos electrónicos, lo que contradice la intención de ser amable y cordial.",
+  "matches": false,
+  "confidence": 1,
+  "actualText": "Your order was placed and will ship whenever. Now stop emailing us, we have better things to do.",
+  "expectedIntent": "Confirma el pedido agradeciendo al cliente con un tono amable y cordial",
+  "negated": true,
+  "threshold": 0.7,
+  "passed": true
+}

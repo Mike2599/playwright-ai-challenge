@@ -1,0 +1,266 @@
+[
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/inventory.html",
+    "resourceType": "document",
+    "requestHeaders": {
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 42,
+    "status": 404,
+    "responseHeaders": {
+      "content-length": "1436",
+      "content-type": "text/html; charset=utf-8",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "22fa79804ad4e0468f375a2ef852d442ecef6ea7",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "9008:1108A6:29D640:343876:6AEDDC89",
+      "x-proxy-cache": "MISS",
+      "x-served-by": "cache-bog-skbo2340055-BOG",
+      "x-timer": "S1793974522.394340,VS0,VE5"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/?/inventory.html",
+    "resourceType": "document",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 8,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "725",
+      "content-type": "text/html; charset=utf-8",
+      "x-cache": "HIT",
+      "x-cache-hits": "2",
+      "x-fastly-request-id": "92e96e1d539f38a01b5684946aeaeaf5c4d58848",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "E936:378F2:2AC0EA:3570D3:6AEDDE33",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340055-BOG",
+      "x-timer": "S1793974522.419076,VS0,VE1"
+    },
+    "responseBody": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\" />\n  <link rel=\"icon\" href=\"/favicon.ico\" />\n  <meta name=\"robots\" content=\"noindex\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n  <meta name=\"theme-color\" content=\"#ffffff\" />\n  <meta name=\"description\" content=\"Sauce Labs Swag Labs app\" />\n  <link rel=\"apple-touch-icon\" href=\"/icon-192x192.png\" />\n  <link rel=\"manifest\" href=\"/manifest.json\"/>\n\n  <!-- Single Page Apps for GitHub Pages -->\n  <script type=\"text/javascript\">\n    // https://github.com/rafgraph/spa-github-pages\n    (function(l) {\n      if (l.search[1] === '/' ) {\n        var decoded = l.search.slice(1).split('&').map(function(s) {\n          return s.replace(/~and~/g, '&')\n        }).join('?');\n        window.history.replaceState(null, null,\n                l.pathname.slice(0, -1) + decoded + l.hash\n        );\n      }\n    }(window.location))\n  </script>\n\n  <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500\">\n  <title>Swag Labs</title>\n  <script type=\"module\" crossorigin src=\"/assets/index-DnLqFcJI.js\"></script>\n  <link rel=\"stylesheet\" crossorigin href=\"/assets/index-aSZoiKGF.css\">\n</head>\n<body>\n  <noscript>You need to enable JavaScript to run this app.</noscript>\n  <div id=\"root\"></div>\n</body>\n</html>\n\n"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/index-aSZoiKGF.css",
+    "resourceType": "stylesheet",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/?/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 19,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "10726",
+      "content-type": "text/css; charset=utf-8",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "da844ccaa4bf6fc2c00c4a17b8b387da49b3f267",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "F548:248F1D:2F7B16:3A9934:6AEDE08C",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "REVALIDATED",
+      "x-served-by": "cache-bog-skbo2340055-BOG",
+      "x-timer": "S1793974522.435044,VS0,VE1"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/index-DnLqFcJI.js",
+    "resourceType": "script",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/?/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 26,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "176641",
+      "content-type": "application/javascript; charset=utf-8",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "9c31b3346bd28856bc54c58673d65dfe8dbc047e",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "6D52:20DAC8:590102:601104:6AEDDADD",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340055-BOG",
+      "x-timer": "S1793974522.434018,VS0,VE2"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500",
+    "resourceType": "stylesheet",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 335,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "private, max-age=86400, stale-while-revalidate=604800",
+      "content-type": "text/css; charset=utf-8",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "SAMEORIGIN",
+      "x-xss-protection": "0"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/bike-light-1200x1500-DxcZRFOA.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 14,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "11975",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "6e7fc185625307c649540c6fcafe13fa83510fbe",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "4F8C:C101:27B51E:3217BC:6AEDDC83",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340055-BOG",
+      "x-timer": "S1793974523.921095,VS0,VE2"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/bolt-shirt-1200x1500-mR0ldpVS.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 14,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "14983",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "a7bb264f710701a5b341eb17673263fd505ad2a7",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "D74C:293838:2E2F59:394E31:6AEDE08C",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340055-BOG",
+      "x-timer": "S1793974523.921078,VS0,VE2"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/red-onesie-1200x1500-BrSuq0ic.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 17,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "18574",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "0653847a5fec212382ed602cb8dd1d7f301ed5e3",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "E67C:1CB7:205832:27FCD0:6AEDDC85",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "REVALIDATED",
+      "x-served-by": "cache-bog-skbo2340055-BOG",
+      "x-timer": "S1793974523.922222,VS0,VE2"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/red-tatt-1200x1500-E-qp6aYf.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 18,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "30463",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "3d0d42bd1b6fe7fd9a0687b5bbb05c74a2eaaeb2",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "15B4:22832:5935C2:604384:6AEDDADE",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340055-BOG",
+      "x-timer": "S1793974523.922291,VS0,VE2"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/sauce-backpack-1200x1500-CjRW-Djj.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 19,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "19681",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "e5d7de1c005d6c9aa17b28804b6bc869b4393438",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "B136:2AD93A:4B9FF9:53FDFD:6AEDDDA5",
+      "x-origin-cache": "HIT",
+      "x-proxy-cache": "HIT",
+      "x-served-by": "cache-bog-skbo2340055-BOG",
+      "x-timer": "S1793974523.922094,VS0,VE3"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://www.saucedemo.com/assets/sauce-pullover-1200x1500-BfbI-PSd.jpg",
+    "resourceType": "image",
+    "requestHeaders": {
+      "referer": "https://www.saucedemo.com/inventory.html",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36"
+    },
+    "durationMs": 105,
+    "status": 200,
+    "responseHeaders": {
+      "cache-control": "max-age=600",
+      "content-length": "50028",
+      "content-type": "image/jpeg",
+      "x-cache": "HIT",
+      "x-cache-hits": "1",
+      "x-fastly-request-id": "befa28013a52b6ea0f9c6b43d38ec6b73f1df811",
+      "x-github-edge-region": "iad",
+      "x-github-request-id": "2A50:14A162:3D1673:43FB6D:6AEDD348",
+      "x-proxy-cache": "REVALIDATED",
+      "x-served-by": "cache-bog-skbo2340055-BOG",
+      "x-timer": "S1793974523.922276,VS0,VE4"
+    }
+  }
+]

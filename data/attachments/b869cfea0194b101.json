@@ -1,0 +1,13 @@
+[
+  {
+    "url": "https://www.saucedemo.com/assets/index-DnLqFcJI.js",
+    "action": "modified",
+    "status": 200,
+    "details": [
+      "respuesta original HTTP 200 (550450 bytes)",
+      "texto \"Thank you for your order!\" → \"Payment declined\": 1 reemplazo(s)",
+      "texto \"Your order has been dispatched, and will arrive just as fast as the pony can get there!\" → \"We could not process your card. Your order has been cancelled and nothing was charged.\": 1 reemplazo(s)"
+    ],
+    "timestamp": "2026-11-06T14:10:45.922Z"
+  }
+]

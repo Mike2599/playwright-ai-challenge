@@ -1,0 +1,11 @@
+{
+  "detectedIntent": "El texto confirma el pedido y agradece al cliente con un tono amable y cordial. Se menciona que el pedido se ha realizado con éxito y se enviará pronto.",
+  "reasoning": "El texto cumple con la intención de confirmar el pedido y agradecer al cliente. El tono amable y cordial también se encuentra presente en el texto. No se menciona nada contradictorio o incompleto.",
+  "matches": true,
+  "confidence": 1,
+  "actualText": "Thank you so much for your order! It was placed successfully and we will ship it to you very soon.",
+  "expectedIntent": "Confirma el pedido agradeciendo al cliente con un tono amable y cordial",
+  "negated": false,
+  "threshold": 0.7,
+  "passed": true
+}

@@ -1,0 +1,20 @@
+{
+  "target": "precios de los productos del resumen de la orden",
+  "brokenSelector": "[data-test=\"inventory-item-price\"]",
+  "healedSelector": "div.inventory_item_price[data-qa=\"inventory-item-price-ky00q\"]",
+  "selectorType": "css",
+  "reason": "atributo data-qa=\"inventory-item-price-ky00q\"",
+  "scope": ".cart_list",
+  "aiRounds": 1,
+  "candidates": [
+    {
+      "selector": "div.inventory_item_price[data-qa=\"inventory-item-price-ky00q\"]",
+      "type": "css",
+      "reason": "atributo data-qa=\"inventory-item-price-ky00q\"",
+      "verdict": "aceptado"
+    }
+  ],
+  "durationMs": 47775,
+  "model": "ollama/llama3.1:8b",
+  "timestamp": "2026-11-06T14:21:14.158Z"
+}

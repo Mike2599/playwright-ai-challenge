@@ -1,0 +1,11 @@
+{
+  "detectedIntent": "El pago fue rechazado y el pedido se canceló. El tono es neutral.",
+  "reasoning": "El texto comunica que el pago fue rechazado (idea 1) y que el pedido se canceló (idea 2). El tono es neutral porque no hay un tono positivo o amable, pero tampoco es negativo o crítico. Esto cumple con la intención esperada.",
+  "matches": true,
+  "confidence": 1,
+  "actualText": "Payment declined\nWe could not process your card. Your order has been cancelled and nothing was charged.\nBack Home",
+  "expectedIntent": "Informa que el pago fue rechazado y que el pedido se canceló",
+  "negated": false,
+  "threshold": 0.7,
+  "passed": true
+}

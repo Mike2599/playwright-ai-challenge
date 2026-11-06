@@ -1,0 +1,17 @@
+{
+  "request": {
+    "scenario": "compra personal con entrega a domicilio",
+    "country": "ES"
+  },
+  "profile": {
+    "firstName": "Anaïs",
+    "lastName": "Sánchez Gómez",
+    "email": "asanchezgomez@gmail.com",
+    "phone": "+34 678901234",
+    "country": "ES",
+    "city": "Málaga",
+    "address": "Calle Virreina 123",
+    "postalCode": "29001",
+    "deliveryInstructions": "Dejar en la nevera de la entrada del edificio"
+  }
+}

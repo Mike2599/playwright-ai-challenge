@@ -1,0 +1,20 @@
+{
+  "target": "campo de texto Zip/Postal Code (código postal)",
+  "brokenSelector": "[data-test=\"postalCode\"]",
+  "healedSelector": "#postal-code_ky00q",
+  "selectorType": "css",
+  "reason": "id del elemento",
+  "scope": ".checkout_info",
+  "aiRounds": 1,
+  "candidates": [
+    {
+      "selector": "#postal-code_ky00q",
+      "type": "css",
+      "reason": "id del elemento",
+      "verdict": "aceptado"
+    }
+  ],
+  "durationMs": 18527,
+  "model": "ollama/llama3.1:8b",
+  "timestamp": "2026-11-06T14:20:00.012Z"
+}

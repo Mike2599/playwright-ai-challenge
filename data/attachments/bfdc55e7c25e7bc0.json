@@ -1,0 +1,20 @@
+{
+  "target": "contador de productos del carrito (número sobre el ícono)",
+  "brokenSelector": "[data-test=\"shopping-cart-badge\"]",
+  "healedSelector": "[data-qa=\"shopping-cart-badge-38h3i\"]",
+  "selectorType": "css",
+  "reason": "atributo de prueba data-qa",
+  "scope": ".shopping_cart_container",
+  "aiRounds": 1,
+  "candidates": [
+    {
+      "selector": "[data-qa=\"shopping-cart-badge-38h3i\"]",
+      "type": "css",
+      "reason": "atributo de prueba data-qa",
+      "verdict": "aceptado"
+    }
+  ],
+  "durationMs": 22561,
+  "model": "ollama/llama3.1:8b",
+  "timestamp": "2026-11-06T14:02:20.141Z"
+}
