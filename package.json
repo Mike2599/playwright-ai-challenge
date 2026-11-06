@@ -1,0 +1,41 @@
+{
+  "name": "playwright-ai-challenge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Flujo de compra E2E en SauceDemo con Playwright + TypeScript e IA: selectores auto-reparables, aserciones semánticas y datos sintéticos.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:local": "cross-env TEST_ENV=local playwright test",
+    "test:ci": "cross-env TEST_ENV=ci playwright test",
+    "test:cross-browser": "cross-env BROWSERS=chromium,firefox,webkit playwright test",
+    "test:e2e": "playwright test --grep @e2e",
+    "test:healing": "playwright test --grep @self-healing",
+    "test:semantic": "playwright test --grep @semantic",
+    "test:synthetic": "playwright test --grep @synthetic-data",
+    "test:network": "playwright test --grep @network",
+    "test:auth": "playwright test --grep @auth",
+    "test:providers": "playwright test --grep @providers",
+    "report": "playwright show-report",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "allure:serve": "allure serve allure-results",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1",
+    "@types/node": "^20.19.43",
+    "allure-commandline": "^2.46.1",
+    "allure-js-commons": "3.11.1",
+    "allure-playwright": "3.11.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.6.1",
+    "typescript": "^5.9.3",
+    "zod": "^4.6.7"
+  }
+}
