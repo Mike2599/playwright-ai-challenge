@@ -12,6 +12,8 @@ Automatiza de principio a fin la compra en [SauceDemo](https://www.saucedemo.com
 
 Se implementaron las **tres** opciones de IA (el reto pide al menos dos), con **OpenAI, Anthropic u Ollama** intercambiables por configuración.
 
+**Reporte de la ejecución de referencia, sin instalar nada:** [Allure](https://mike2599.github.io/playwright-ai-challenge/) · [HTML de Playwright](https://mike2599.github.io/playwright-ai-challenge/playwright/)
+
 ---
 
 ## Contenido
@@ -139,6 +141,8 @@ También se puede elegir el entorno con la variable: `TEST_ENV=ci npx playwright
 | **HTML de Playwright** | `npx playwright show-report` | Pasos, anotaciones de self-healing, adjuntos, trace, video y screenshot de los fallos |
 | **Allure** | `npm run allure:serve` (o `allure:generate` + `allure:open`) | Epics/features/stories, severidad, pasos, categorías de fallo propias y entorno (proveedor, modelo, navegador) |
 | **Resumen de uso de IA** | `.ai-logs/ai-usage-summary.json` | Llamadas por propósito, latencia, tokens, selectores reparados y aserciones semánticas |
+
+Los reportes de la ejecución de referencia (27/27, Ollama `llama3.1:8b`) están publicados en GitHub Pages: **[Allure](https://mike2599.github.io/playwright-ai-challenge/)** y **[HTML de Playwright](https://mike2599.github.io/playwright-ai-challenge/playwright/)**. Ahí se pueden abrir los adjuntos de cada prueba sin clonar el proyecto.
 
 **Peticiones y respuestas adjuntas a cada prueba** (en Allure y en el HTML):
 
@@ -286,11 +290,11 @@ Ejecución de referencia: Windows 11, Node 24, Chromium, **Ollama `llama3.1:8b` 
 
 | Métrica | Resultado |
 |---|---|
-| Pruebas | **27 / 27 exitosas** (19,6 min) |
-| Llamadas a la IA | 42 (0 fallidas) · 23 de self-healing, 11 de datos sintéticos, 8 de aserciones semánticas |
+| Pruebas | **27 / 27 exitosas** (19,7 min) |
+| Llamadas a la IA | 40 (0 fallidas) · 23 de self-healing, 9 de datos sintéticos, 8 de aserciones semánticas |
 | Selectores reparados | 21, todos en la **primera** ronda de la IA |
 | Aserciones semánticas | 8, todas con confianza 1,0 |
-| Latencia media por llamada | ~25 s (CPU). Con un proveedor en la nube baja a segundos |
+| Latencia media por llamada | ~27 s (CPU). Con un proveedor en la nube baja a segundos |
 
 Verificaciones adicionales:
 - **Firefox y WebKit**: sesión, red, contrato de proveedores y self-healing con el DOM alterado, todos en verde.
@@ -300,5 +304,9 @@ Verificaciones adicionales:
 
 ### Limitaciones conocidas
 
-- **Tiempo con un modelo local en CPU**: la compra E2E tarda ~7,5 min porque cada reparación de selector es una llamada al LLM (17 en esa prueba). Por eso `TEST_TIMEOUT_MS` se puede configurar.
+- **Tiempo con un modelo local en CPU**: la compra E2E tarda entre 7,5 y 10 min porque cada reparación de selector es una llamada al LLM (17 en esa prueba). Por eso `TEST_TIMEOUT_MS` se puede configurar.
 - **Modelos pequeños (8B)**: tienen dificultades para separar contenido y tono cuando un mismo texto mezcla una confirmación con una frase hostil. La prueba de tono compara el mismo contenido con dos tonos distintos, lo que el modelo sí evalúa de forma consistente. Durante el desarrollo también se observó que un modelo de 8B a veces llama `button` a un `<input type="submit">`; el healer lo resuelve con la corrección de etiqueta descrita en la Opción A.
+
+## Licencia
+
+[MIT](LICENSE)
